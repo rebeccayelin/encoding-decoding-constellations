@@ -48,15 +48,25 @@ body {
         radial-gradient(2px 2px at 90% 60%, white, transparent),
         radial-gradient(1px 1px at 33% 80%, white, transparent),
         radial-gradient(1px 1px at 70% 40%, white, transparent);
-    background-size: 200% 200%;
+    background-size: 150% 150%;
     background-position: 0% 0%;
     opacity: 0.4;
     animation: starfield 60s ease-in-out infinite;
+    will-change: background-position;
 }
 
 @keyframes starfield {
     0%, 100% { background-position: 0% 0%; }
     50% { background-position: 100% 100%; }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .constellation-pattern,
+    .stars {
+        animation: none;
+        background-position: 50% 50%;
+    }
 }
 
 .title {
