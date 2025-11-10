@@ -38,6 +38,48 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color var(--transition), box-shadow var(--transition);
+}
+
+a:not(.button) {
+  color: var(--accent);
+  font-weight: 500;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+a:not(.button)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 0.1rem;
+  background: rgba(95, 106, 214, 0.35);
+  transform: scaleX(0.35);
+  transform-origin: left center;
+  transition: transform var(--transition), background var(--transition), opacity var(--transition);
+  opacity: 0.7;
+}
+
+a:not(.button):hover,
+a:not(.button):focus-visible {
+  color: var(--text-primary);
+}
+
+a:not(.button):hover::after,
+a:not(.button):focus-visible::after {
+  transform: scaleX(1);
+  background: rgba(95, 106, 214, 0.6);
+  opacity: 1;
+}
+
+a:not(.button):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(95, 106, 214, 0.2);
+  border-radius: 0.4rem;
 }
 
 .hero {
@@ -278,26 +320,23 @@ a {
 }
 
 .gallery-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  background: none;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 20rem;
-  transition: transform var(--transition), border-color var(--transition);
-  box-shadow: 0 14px 32px rgba(31, 36, 49, 0.1);
+  display: block;
+  transition: transform var(--transition);
 }
 
 .gallery-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(95, 106, 214, 0.3);
+  transform: translateY(-4px);
 }
 
 .gallery-card__image {
   aspect-ratio: 4 / 3;
   background-size: cover;
   background-position: center;
+  border-radius: 0;
 }
 
 .gallery-card__image--one {
@@ -313,25 +352,6 @@ a {
 .gallery-card__image--three {
   background-image: linear-gradient(130deg, rgba(187, 127, 255, 0.25), rgba(255, 255, 255, 0)),
     url("https://images.unsplash.com/photo-1529876754933-9ec125745338?auto=format&fit=crop&w=1200&q=80");
-}
-
-.gallery-card__body {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.gallery-card__body h3 {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.gallery-card__body p {
-  margin: 0;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
 }
 
 .media-grid {
@@ -477,12 +497,15 @@ a {
 }
 
 .footer__links a {
-  color: var(--text-secondary);
-  transition: color var(--transition);
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color var(--transition), transform var(--transition);
 }
 
 .footer__links a:hover {
   color: var(--text-primary);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 960px) {
