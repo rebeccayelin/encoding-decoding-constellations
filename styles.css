@@ -42,7 +42,7 @@ a {
 }
 
 a:not(.button) {
-  color: var(--accent);
+  color: #b8956a;
   font-weight: 500;
   position: relative;
   display: inline-flex;
@@ -57,7 +57,7 @@ a:not(.button)::after {
   bottom: -0.2rem;
   width: 100%;
   height: 0.1rem;
-  background: rgba(95, 106, 214, 0.35);
+  background: rgba(184, 149, 106, 0.4);
   transform: scaleX(0.35);
   transform-origin: left center;
   transition: transform var(--transition), background var(--transition), opacity var(--transition);
@@ -66,19 +66,19 @@ a:not(.button)::after {
 
 a:not(.button):hover,
 a:not(.button):focus-visible {
-  color: var(--text-primary);
+  color: #9d7a4f;
 }
 
 a:not(.button):hover::after,
 a:not(.button):focus-visible::after {
   transform: scaleX(1);
-  background: rgba(95, 106, 214, 0.6);
+  background: rgba(184, 149, 106, 0.65);
   opacity: 1;
 }
 
 a:not(.button):focus-visible {
   outline: none;
-  box-shadow: 0 0 0 0.25rem rgba(95, 106, 214, 0.2);
+  box-shadow: 0 0 0 0.25rem rgba(184, 149, 106, 0.25);
   border-radius: 0.4rem;
 }
 
@@ -290,7 +290,11 @@ a:not(.button):focus-visible {
 
 .section__text {
   color: var(--text-secondary);
-  margin: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+.section__text:last-child {
+  margin-bottom: 0;
 }
 
 .section__meta-grid {
@@ -298,6 +302,10 @@ a:not(.button):focus-visible {
   gap: 1.5rem;
   margin-top: clamp(2rem, 4vw, 3rem);
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.section__meta-grid > div:nth-child(2) {
+  margin-left: -1.5rem;
 }
 
 .meta__label {
@@ -497,14 +505,14 @@ a:not(.button):focus-visible {
 }
 
 .footer__links a {
-  color: var(--accent);
+  color: #b8956a;
   font-weight: 500;
   letter-spacing: 0.01em;
   transition: color var(--transition), transform var(--transition);
 }
 
 .footer__links a:hover {
-  color: var(--text-primary);
+  color: #9d7a4f;
   transform: translateY(-1px);
 }
 
