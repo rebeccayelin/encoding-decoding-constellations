@@ -320,6 +320,145 @@ a:not(.button):focus-visible {
   margin: 0;
 }
 
+/* Works Category Sections */
+.works-category {
+  margin-top: clamp(5rem, 10vw, 8rem);
+}
+
+.works-category:first-of-type {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.works-category__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 clamp(2.5rem, 5vw, 4rem) 0;
+  color: var(--text-primary);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Artwork Documentation Template */
+.artwork {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(4rem, 8vw, 7rem);
+  align-items: start;
+}
+
+.works-category .artwork:first-of-type {
+  margin-top: 0;
+}
+
+.artwork--reverse {
+  direction: rtl;
+}
+
+.artwork--reverse > * {
+  direction: ltr;
+}
+
+.artwork__media {
+  position: relative;
+}
+
+.artwork__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--surface-soft);
+}
+
+.artwork__media--multi {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.artwork__media--multi img:first-child {
+  grid-column: 1 / -1;
+}
+
+.artwork__detail {
+  opacity: 0.95;
+}
+
+.artwork__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artwork__title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.artwork__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.artwork__meta-item {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.artwork__meta-label {
+  font-weight: 500;
+  color: var(--text-primary);
+  min-width: 5rem;
+}
+
+.artwork__wall-text {
+  margin-top: 0.5rem;
+}
+
+.artwork__wall-text p {
+  margin: 0 0 1.25rem 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.artwork__wall-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 960px) {
+  .artwork,
+  .artwork--reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: clamp(2rem, 4vw, 3rem);
+  }
+
+  .artwork__media--multi {
+    grid-template-columns: 1fr;
+  }
+
+  .artwork__meta-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .artwork__meta-label {
+    min-width: auto;
+  }
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
