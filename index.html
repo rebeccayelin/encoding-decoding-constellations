@@ -17,6 +17,14 @@
         <p class="hero__location">
           Wiesner Student Art Gallery · Stratton Student Center · W20 Room 209 · 84 Massachusetts Avenue · Cambridge, MA
         </p>
+        <div class="hero__buttons">
+          <a href="https://studentlife.mit.edu/wiesner-gallery/" class="hero-btn hero-btn--light">
+            Wiesner Gallery
+          </a>
+          <a href="https://poly.geo" class="hero-btn hero-btn--dark">
+            Polygot Geometry
+          </a>
+        </div>
       </div>
       <div class="hero__side">
         <div class="card card--floating">
@@ -35,36 +43,49 @@
 
     <main>
       <section class="section section--light" id="about">
-        <div class="section__intro">
-          <p class="section__eyebrow">About</p>
-          <p class="section__text">
-            Our choice of representation shapes what we can create.
-          </p>
-          <p class="section__text">
-            This exhibition explores a translation between constellation patterns of Islamic art and mathematical graphs. By moving between these representations, we gain access to new vocabularies that let us revisit classical patterns and uncover new expressive forms. Central to this work is a method by Rebecca Lin and <a href="https://cs.uwaterloo.ca/~csk/" target="_blank" rel="noopener">Craig S. Kaplan</a> that “encodes” constellations as graphs—stars as vertices and their connections as edges—and then “decodes” them back into interlocking stars through circle packing and classical construction techniques.
-          </p>
-          <p class="section__text">
-            The designs are crafted computationally in <a href="https://rebeccayelin.github.io/constellations/" target="_blank" rel="noopener">custom-built software</a> and refined through careful manual intervention. They are then grounded in physical making across a range of media, including light, wood, and textiles, often through a dialogue between handcraft and machine processes such as laser cutting. Together, these works trace the interplay between mathematical abstraction, computation, and craft, and the expanded space that emerges when constellations move between these worlds.
-          </p>
-        </div>
-        <div class="section__meta-grid">
-          <div>
-            <p class="meta__label">Designed by</p>
-            <p class="meta__value">
-              <a href="https://rebeccayelin.github.io/" target="_blank" rel="noopener">Rebecca Lin</a>
+        <div class="about__container">
+          <div class="section__intro">
+            <p class="section__eyebrow">About</p>
+            <p class="section__text">
+              Our choice of representation shapes what we can create.
             </p>
-          </div>
-          <div>
-            <p class="meta__label">In Collaboration With</p>
-            <p class="meta__value">
-              Ben Weiss
-              &nbsp;·&nbsp;
-              <a href="https://www.yufengzhao.com/" target="_blank" rel="noopener">Yufeng Zhao</a>
+            <p class="section__text">
+              This exhibition explores a translation between constellation patterns of Islamic art and mathematical graphs. By moving between these representations, we gain access to new vocabularies that let us revisit classical patterns and uncover new expressive forms. Central to this work is a method by Rebecca Lin and <a href="https://cs.uwaterloo.ca/~csk/" target="_blank" rel="noopener">Craig S. Kaplan</a> that "encodes" constellations as graphs—stars as vertices and their connections as edges—and then "decodes" them back into interlocking stars through circle packing and classical construction techniques.
             </p>
+            <p class="section__text">
+              The designs are crafted computationally in <a href="https://rebeccayelin.github.io/constellations/" target="_blank" rel="noopener">custom-built software</a> and refined through careful manual intervention. They are then grounded in physical making across a range of media, including light, wood, and textiles, often through a dialogue between handcraft and machine processes such as laser cutting. Together, these works trace the interplay between mathematical abstraction, computation, and craft, and the expanded space that emerges when constellations move between these worlds.
+            </p>
+            <div class="section__meta-grid">
+              <div>
+                <p class="meta__label">Designed by</p>
+                <p class="meta__value">
+                  <a href="https://rebeccayelin.github.io/" target="_blank" rel="noopener">Rebecca Lin</a>
+                </p>
+              </div>
+              <div>
+                <p class="meta__label">In Collaboration With</p>
+                <p class="meta__value">
+                  Ben Weiss
+                  &nbsp;·&nbsp;
+                  <a href="https://www.yufengzhao.com/" target="_blank" rel="noopener">Yufeng Zhao</a>
+                </p>
+              </div>
+              <div>
+                <p class="meta__label">With Support From</p>
+                <p class="meta__value">
+                 MIT Morningside Academy of Design (MAD)<br>
+                  Council for the Arts at MIT (CAMIT)
+                </p>
+              </div>
+              <div>
+                <p class="meta__label">Mediums</p>
+                <p class="meta__value">Projection · Engraving · Sculpture · Textile</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <p class="meta__label">Mediums</p>
-            <p class="meta__value">Projection · Engraving · Sculpture · Textile</p>
+          <div class="about__images about__images--stacked">
+            <img src="assets/left-wall.jpg" alt="About section image (left wall)">
+            <img src="assets/back-wall.jpg" alt="About section image (right wall)">
           </div>
         </div>
       </section>
@@ -78,57 +99,62 @@
         <div class="works-category">
           <h2 class="works-category__title">Background Videos</h2>
 
-          <article class="artwork">
-            <div class="artwork__media">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Video+I%3A+Constellation+Patterns" alt="Video I: Constellation Patterns">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Video I: Constellation Patterns</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Video, digital</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Duration:</span> Variable</p>
+          <div class="videos-grid">
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1"
+                  title="Video I: Constellation Patterns"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
               </div>
-              <div class="artwork__wall-text">
-                <p>Islamic geometric patterns are a rich and venerable ornamental tradition, their interlocking stars woven through precise geometric rules. While four- and six-fold constellations rest naturally on square or hexagonal grids, any departure from these symmetries—with stars of five, seven, nine, or eleven points, and countless others—unravels into a far more complex puzzle. Artists have met this challenge with inventive geometries and artful distortions, yet the crafting of nonstandard constellations has remained painstaking, uncertain, and underexplored.</p>
+              <div class="video-item__info">
+                <h3 class="video-item__title">Video I: Constellation Patterns</h3>
+                <div class="video-item__wall-text">
+                  <p>Islamic geometric patterns are a rich and venerable ornamental tradition, their interlocking stars woven through precise geometric rules. While four- and six-fold constellations rest naturally on square or hexagonal grids, any departure from these symmetries—with stars of five, seven, nine, or eleven points, and countless others—unravels into a far more complex puzzle. Artists have met this challenge with inventive geometries and artful distortions, yet the crafting of nonstandard constellations has remained painstaking, uncertain, and underexplored.</p>
+                </div>
               </div>
             </div>
-          </article>
 
-          <article class="artwork artwork--reverse">
-            <div class="artwork__media">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Video+II%3A+Encoding-Decoding+Scheme" alt="Video II: Encoding-Decoding Scheme">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Video II: Encoding-Decoding Scheme</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Video, digital</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Duration:</span> Variable</p>
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2"
+                  title="Video II: Encoding-Decoding Scheme"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
               </div>
-              <div class="artwork__wall-text">
-                <p>Intrigued by constellations that mix or depart from classical symmetries, Rebecca Lin and Craig S. Kaplan proposed an encoding–decoding scheme for generating star-based designs. A planar graph encodes the pattern: vertices represent stars, and edges specify how they meet. From this graph, a circle packing—guaranteed by the circle packing theorem—provides a geometric scaffold, upon which classical construction techniques are adapted to produce the interlocking motifs.</p>
-                <p>This translation between combinatorial and geometric representation opens new expressive possibilities. By crafting the connections between vertices, one controls each star's points and how stars relate. The rest of the exhibition features many new designs—some classical-looking, others more freeform—created with this approach.</p>
+              <div class="video-item__info">
+                <h3 class="video-item__title">Video II: Encoding-Decoding Scheme</h3>
+                <div class="video-item__wall-text">
+                  <p>Intrigued by constellations that mix or depart from classical symmetries, Rebecca Lin and Craig S. Kaplan proposed an encoding–decoding scheme for generating star-based designs. A planar graph encodes the pattern: vertices represent stars, and edges specify how they meet. From this graph, a circle packing—guaranteed by the circle packing theorem—provides a geometric scaffold, upon which classical construction techniques are adapted to produce the interlocking motifs.</p>
+                  <p>This translation between combinatorial and geometric representation opens new expressive possibilities. By crafting the connections between vertices, one controls each star's points and how stars relate. The rest of the exhibition features many new designs—some classical-looking, others more freeform—created with this approach.</p>
+                </div>
               </div>
             </div>
-          </article>
 
-          <article class="artwork">
-            <div class="artwork__media">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Video+III%3A+Computational+Design+Tool" alt="Video III: Computational Design Tool">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Video III: Computational Design Tool</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Video, digital</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Duration:</span> Variable</p>
+            <div class="video-item">
+              <div class="video-item__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID_3"
+                  title="Video III: Computational Design Tool"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
               </div>
-              <div class="artwork__wall-text">
-                <p>Lin and Kaplan developed a computational design tool that renders the graphical and geometric objects of their encoding–decoding scheme as graphical and programmable structures. It supports a new mode of reasoning about the method and the expanded design space it creates, bridging the gap between mathematical abstraction and craft.</p>
+              <div class="video-item__info">
+                <h3 class="video-item__title">Video III: Computational Design Tool</h3>
+                <div class="video-item__wall-text">
+                  <p>Lin and Kaplan developed a computational design tool that renders the graphical and geometric objects of their encoding–decoding scheme as graphical and programmable structures. It supports a new mode of reasoning about the method and the expanded design space it creates, bridging the gap between mathematical abstraction and craft.</p>
+                </div>
               </div>
             </div>
-          </article>
+          </div>
         </div>
 
         <!-- Projections -->
@@ -142,7 +168,7 @@
             <div class="artwork__info">
               <h3 class="artwork__title">Projection I: Patterns / Circles / Graphs</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Projection mapping, custom software</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Collaborator:</span> Yufeng Zhao</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Dimensions:</span> Variable</p>
@@ -161,7 +187,7 @@
             <div class="artwork__info">
               <h3 class="artwork__title">Projection II: Discovery</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Projection mapping, custom software</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Collaborator:</span> Yufeng Zhao</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Dimensions:</span> Variable</p>
@@ -179,12 +205,12 @@
 
           <article class="artwork">
             <div class="artwork__media">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=After+Schotter" alt="After Schotter">
+              <img src="assets/schotter.jpg" alt="After Schotter">
             </div>
             <div class="artwork__info">
               <h3 class="artwork__title">After Schotter</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Laser engraving on acrylic</p>
               </div>
               <div class="artwork__wall-text">
@@ -216,82 +242,11 @@
             <div class="artwork__info">
               <h3 class="artwork__title">Yearning (for a Fantasy)</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Laser engraving on printmaking paper</p>
               </div>
               <div class="artwork__wall-text">
-                <p>Against structure, a stretch toward freedom.</p>
-                <p>A gap between what is and what could be.</p>
-                <p>How it appeared in my dreams</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="artwork artwork--reverse">
-            <div class="artwork__media artwork__media--multi">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Research+Notes" alt="Research Notes">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Research Notes</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Collage of sketches</p>
-              </div>
-              <div class="artwork__wall-text">
-                <p>A collage of sketches documenting Lin and Kaplan's development of their encoding–decoding scheme.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="artwork">
-            <div class="artwork__media artwork__media--multi">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Sketching+Graphs+for+New+Geometries" alt="Sketching Graphs for New Geometries">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Sketching Graphs for New Geometries</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Behind-the-scenes sketches</p>
-              </div>
-              <div class="artwork__wall-text">
-                <p>Behind-the-scenes sketches examining the relationships between tilings—used as scaffolds for motif construction—and graphs, and on designing graphs to generate original constellation patterns evolved from the classical aesthetic.</p>
-              </div>
-            </div>
-          </article>
-
-          <article class="artwork artwork--reverse">
-            <div class="artwork__media artwork__media--multi">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Laser+Engraving+Experiments" alt="Laser Engraving Experiments">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Laser Engraving Experiments</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Laser engraving on printmaking paper</p>
-              </div>
-              <div class="artwork__wall-text">
-                <p>A series of tests using different laser cuttings to understand how their parameters interact with printmaking paper.</p>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Textiles -->
-        <div class="works-category">
-          <h2 class="works-category__title">Textiles</h2>
-
-          <article class="artwork artwork--reverse">
-            <div class="artwork__media">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Textile+Studies" alt="Textile Studies">
-            </div>
-            <div class="artwork__info">
-              <h3 class="artwork__title">Textile Studies</h3>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Polyester cotton blend</p>
-              </div>
-              <div class="artwork__wall-text">
-                <p>These pieces explore a translation of digital patterns into the physical world. Mathematics and computation—often seen as abstract or distant—can become embodied through dialogue with handcraft, which carries care and closeness. In this form, the patterns are lived-in and intimate: draped on the body.</p>
+                <p>Against structure, a stretch toward freedom. A gap between what is and what could be.</p>
               </div>
             </div>
           </article>
@@ -301,30 +256,46 @@
         <div class="works-category">
           <h2 class="works-category__title">Sculptures</h2>
 
+          <article class="artwork artwork--reverse">
+            <div class="artwork__media">
+              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Textile+Studies" alt="Textile Studies">
+            </div>
+            <div class="artwork__info">
+              <h3 class="artwork__title">Textile Studies</h3>
+              <div class="artwork__meta">
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Polyester cotton blend</p>
+              </div>
+              <div class="artwork__wall-text">
+                <p>These pieces explore a translation of digital patterns into the physical world. Mathematics and computation—often seen as abstract or distant—can become embodied through dialogue with handcraft, which carries care and closeness. In this form, the patterns are lived-in and intimate: draped on the body.</p>
+              </div>
+            </div>
+          </article>
+
           <article class="artwork">
             <div class="artwork__media artwork__media--multi">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=i+couldn%27t+find+myself" alt="i couldn't find myself (in your cosmic presence)">
+              <img src="assets/find-myself.jpg" alt="i couldn't find myself (in your cosmic presence)">
             </div>
             <div class="artwork__info">
               <h3 class="artwork__title">i couldn't find myself<br>(in your cosmic presence)</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Engraved plywood, acrylic paint, and light</p>
               </div>
               <div class="artwork__wall-text">
-                <p>Shadowed and fragmented,<br>yet widening.<br>A field of rosettes grows—<br>a nod at kintsugi.</p>
+                <p>Shadowed and fragmented,<br>yet widening.<br>A field of rosettes blooms<br>a nod at kintsugi.</p>
               </div>
             </div>
           </article>
 
           <article class="artwork artwork--reverse">
             <div class="artwork__media artwork__media--multi">
-              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Sculpture+Study" alt="Sculpture Study">
+              <img src="assets/sculpture-study-2.jpg" alt="Sculpture Study">
             </div>
             <div class="artwork__info">
               <h3 class="artwork__title">Sculpture Study</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Nylon 12 (SLS 3D print) and Gypsophila</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Collaborator:</span> Ben Weiss</p>
               </div>
@@ -346,7 +317,7 @@
             <div class="artwork__info">
               <h3 class="artwork__title">Spiraling</h3>
               <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
                 <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Digital print</p>
               </div>
               <div class="artwork__wall-text">
@@ -354,8 +325,76 @@
               </div>
             </div>
           </article>
+
+          <article class="artwork artwork--reverse">
+            <div class="artwork__media">
+              <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=How+it+appeared+in+my+dreams" alt="How it appeared in my dreams">
+            </div>
+            <div class="artwork__info">
+              <h3 class="artwork__title">How it appeared in my dreams</h3>
+              <div class="artwork__meta">
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Photography</p>
+              </div>
+              <div class="artwork__wall-text">
+                <p></p>
+              </div>
+            </div>
+          </article>
         </div>
 
+        <div class="works-category">
+          <h2 class="works-category__title">Research Notes</h2>
+        </div>
+        <article class="artwork artwork--reverse">
+          <div class="artwork__media artwork__media--multi">
+            <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Research+Notes" alt="Research Notes">
+          </div>
+          <div class="artwork__info">
+            <h3 class="artwork__title">Research Notes &amp; Sketching Graphs for New Geometries</h3>
+            <div class="artwork__meta">
+              <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
+              <p class="artwork__meta-item">
+                <span class="artwork__meta-label">Medium:</span> Collage of sketches and behind-the-scenes drawings
+              </p>
+            </div>
+            <div class="artwork__wall-text">
+              <p>
+                A collage of research sketches and process drawings from Lin and Kaplan, documenting their development of the encoding–decoding scheme—from early explorations of how graph structures encode constellation patterns, to experimental graph design and the relationships between tilings and motif construction. These behind-the-scenes notes reveal how original constellation patterns evolved from the classical aesthetic and how creative graph sketching unlocks new geometry.
+              </p>
+            </div>
+          </div>
+          <div class="artwork__media artwork__media--multi">
+            <img src="https://placehold.co/1200x800/f3f1eb/c7ccd8?text=Sketching+Graphs+for+New+Geometries" alt="Sketching Graphs for New Geometries">
+          </div>
+          <div class="artwork__info">
+            <h3 class="artwork__title">Sketching Graphs for New Geometries</h3>
+            <div class="artwork__meta">
+              <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
+              <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Behind-the-scenes sketches</p>
+            </div>
+            <div class="artwork__wall-text">
+              <p>Behind-the-scenes sketches examining the relationships between tilings—used as scaffolds for motif construction—and graphs, and on designing graphs to generate original constellation patterns evolved from the classical aesthetic.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="artwork artwork--reverse">
+          <div class="artwork__media artwork__media--multi">
+            <img src="assets/experiments.png" alt="Laser Engraving Experiments">
+          </div>
+          <div class="artwork__info">
+            <h3 class="artwork__title">Laser Engraving Experiments</h3>
+            <div class="artwork__meta">
+              <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2024-2025</p>
+              <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Laser engraving on printmaking paper</p>
+            </div>
+            <div class="artwork__wall-text">
+              <p>A series of tests using different laser cuttings to understand how their parameters interact with printmaking paper.</p>
+            </div>
+          </div>
+        </article>
+        </div>
       </section>
 
     <footer class="footer">
