@@ -237,18 +237,31 @@ a:not(.button):focus-visible {
 
 .hero__animation {
   position: absolute;
-  inset: -35% -15% -25% auto;
-  width: clamp(16rem, 38vw, 28rem);
-  background-image: url("https://media.giphy.com/media/eMZvzX0KtwbWk/giphy.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.55;
-  mix-blend-mode: screen;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: clamp(20rem, 45vw, 35rem);
+  height: 100%;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
   filter: blur(4px) saturate(120%);
   border-radius: 45% 55% 58% 42% / 55% 45% 55% 45%;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__animation video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .section {
@@ -686,6 +699,7 @@ a:not(.button):focus-visible {
     inset: auto;
     width: 80%;
     max-width: 20rem;
+    height: 120%;
   }
 
   .button--primary,
