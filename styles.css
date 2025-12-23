@@ -556,6 +556,73 @@ a:not(.button):not(.hero-btn):focus-visible {
   grid-column: 1 / -1;
 }
 
+/* Carousel Styles */
+.carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carousel__main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel__slide {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel__slide.active {
+  display: block;
+  opacity: 1;
+}
+
+.carousel__slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--surface-soft);
+}
+
+.carousel__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.carousel__thumb {
+  position: relative;
+  padding: 0;
+  border: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.carousel__thumb:hover {
+  opacity: 0.8;
+}
+
+.carousel__thumb.active {
+  border-color: #b8956a;
+  opacity: 1;
+}
+
+.carousel__thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 2;
+}
+
 .artwork__detail {
   opacity: 0.95;
 }
@@ -610,6 +677,24 @@ a:not(.button):not(.hero-btn):focus-visible {
 
 .artwork__wall-text p:last-child {
   margin-bottom: 0;
+}
+
+/* Full-width artwork image */
+.artwork-fullwidth {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: clamp(4rem, 8vw, 7rem);
+  margin-bottom: 0;
+}
+
+.artwork-fullwidth img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (max-width: 960px) {
