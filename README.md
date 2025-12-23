@@ -9,3 +9,15 @@ ffmpeg -i projection-2-2.mov \
   -crf 22 -preset slow \
   -movflags +faststart \
   projection-2-2.mp4
+
+
+
+- add photo credit for the one esther took
+- populate video links (should it be youtube, or would mp4 be OK?)
+- make a gallery image full width
+- about section: note curator
+- add an artist note + photo at the end + acknowledgements (CBA + Media Lab + CSAIL, etc. advisors)
+- edit the lighting of some images
+- script to convert to webp form
+- change the carousel so the thumbnails are on the right instead
+-
