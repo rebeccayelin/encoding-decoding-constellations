@@ -15,6 +15,5 @@ ffmpeg -i projection-2-2.mov \
 - populate video links (should it be youtube, or would mp4 be OK?)
 - make a gallery image full width
 - about section: note curator
-- add an artist note + photo at the end + acknowledgements (CBA + Media Lab + CSAIL, etc. advisors)
 - edit the lighting of some images
 - more photos but with faces blurred out? do i know how to do that?
