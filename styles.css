@@ -547,6 +547,30 @@ a:not(.button):not(.hero-btn):focus-visible {
   background: var(--surface-soft);
 }
 
+.artwork__image-wrapper {
+  position: relative;
+}
+
+.photo-credit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  color: white;
+  padding: 0.75rem 1rem 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+  transition: opacity var(--transition), background var(--transition);
+  pointer-events: none;
+}
+
+.artwork__image-wrapper:hover .photo-credit {
+  opacity: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 60%, transparent 100%);
+}
+
 .artwork__media--multi {
   display: grid;
   gap: 1.5rem;
@@ -559,13 +583,15 @@ a:not(.button):not(.hero-btn):focus-visible {
 /* Carousel Styles */
 .carousel {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
 .carousel__main {
   position: relative;
   width: 100%;
+  flex: 1;
   overflow: hidden;
 }
 
@@ -589,9 +615,11 @@ a:not(.button):not(.hero-btn):focus-visible {
 }
 
 .carousel__thumbnails {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 0.75rem;
+  flex-shrink: 0;
+  width: 80px;
 }
 
 .carousel__thumb {
@@ -620,7 +648,7 @@ a:not(.button):not(.hero-btn):focus-visible {
   height: auto;
   display: block;
   object-fit: cover;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 1;
 }
 
 .artwork__detail {
