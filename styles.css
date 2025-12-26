@@ -368,17 +368,23 @@ a:not(.hero-btn):focus-visible {
 /* ============================================
    Video Items
    ============================================ */
-.video-item {
+.videos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(3rem, 6vw, 5rem);
   margin: clamp(4rem, 8vw, 7rem) auto 0;
   max-width: 1000px;
-  align-items: start;
 }
 
-.works-category .video-item:first-of-type {
-  margin-top: 0;
+.video-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.video-item--fullwidth {
+  margin: clamp(4rem, 8vw, 7rem) auto 0;
+  max-width: 1000px;
 }
 
 .video-item__embed {
@@ -745,7 +751,7 @@ a:not(.hero-btn):focus-visible {
     min-width: auto;
   }
 
-  .video-item {
+  .videos-grid {
     grid-template-columns: 1fr;
     gap: clamp(2rem, 4vw, 3rem);
   }
