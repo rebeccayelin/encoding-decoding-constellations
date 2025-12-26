@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="hero">
       <div class="hero__content">
         <p class="hero__eyebrow">Gallery Exhibition</p>
@@ -41,7 +42,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="section section--light" id="about">
         <div class="about__container">
           <div class="section__intro">
@@ -223,7 +224,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/schotter.webp" type="image/webp">
-                <img src="assets/schotter.jpg" alt="After Schotter">
+                <img src="assets/schotter.jpg" alt="After Schotter" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -242,7 +243,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/disintegrating.webp" type="image/webp">
-                <img src="assets/disintegrating.png" alt="Disintegrating (State of Mind)">
+                <img src="assets/disintegrating.png" alt="Disintegrating (State of Mind)" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -261,7 +262,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/yearning.webp" type="image/webp">
-                <img src="assets/yearning.jpg" alt="Yearning (for a Fantasy)">
+                <img src="assets/yearning.jpg" alt="Yearning (for a Fantasy)" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -279,7 +280,7 @@
           <div class="artwork-fullwidth">
             <picture>
               <source srcset="assets/lasered.webp" type="image/webp">
-              <img src="assets/lasered.png" alt="Two pieces on the wall">
+              <img src="assets/lasered.png" alt="Two pieces on the wall" loading="lazy">
             </picture>
             <div class="photo-credit">Photo: Esther Lin</div>
           </div>
@@ -293,7 +294,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/dresses-2.webp" type="image/webp">
-                <img src="assets/dresses-2.jpg" alt="Textile Studies">
+                <img src="assets/dresses-2.jpg" alt="Textile Studies" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -313,17 +314,17 @@
               <div class="artwork__image-wrapper">
                 <picture>
                   <source srcset="assets/find-myself.webp" type="image/webp">
-                  <img src="assets/find-myself.jpg" alt="i couldn't find myself (in your cosmic presence)">
+                  <img src="assets/find-myself.jpg" alt="i couldn't find myself (in your cosmic presence)" loading="lazy">
                 </picture>
                 <div class="photo-credit">Photo: Esther Lin</div>
               </div>
               <picture>
                 <source srcset="assets/find-myself-close.webp" type="image/webp">
-                <img src="assets/find-myself-close.jpg" alt="i couldn't find myself (in your cosmic presence)">
+                <img src="assets/find-myself-close.jpg" alt="i couldn't find myself (in your cosmic presence)" loading="lazy">
               </picture>
               <picture>
                 <source srcset="assets/engraving.webp" type="image/webp">
-                <img src="assets/engraving.jpg" alt="i couldn't find myself (in your cosmic presence)">
+                <img src="assets/engraving.jpg" alt="i couldn't find myself (in your cosmic presence)" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -348,7 +349,7 @@
             <div class="artwork__media artwork__media--multi">
               <picture>
                 <source srcset="assets/sculpture-study-2.webp" type="image/webp">
-                <img src="assets/sculpture-study-2.jpg" alt="Sculpture Study">
+                <img src="assets/sculpture-study-2.jpg" alt="Sculpture Study" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -368,7 +369,7 @@
         <div class="artwork-fullwidth">
           <picture>
             <source srcset="assets/opening.webp" type="image/webp">
-            <img src="assets/opening.png" alt="Opening reception">
+            <img src="assets/opening.png" alt="Opening reception" loading="lazy">
           </picture>
           <div class="photo-credit">Photo: Esther Lin</div>
         </div>
@@ -381,7 +382,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/spiraling.webp" type="image/webp">
-                <img src="assets/spiraling.jpg" alt="Spiraling">
+                <img src="assets/spiraling.jpg" alt="Spiraling" loading="lazy">
               </picture>
             </div>
             <div class="artwork__info">
@@ -468,7 +469,7 @@
         <div class="artwork-fullwidth">
           <picture>
             <source srcset="assets/fab.webp" type="image/webp">
-            <img src="assets/fab.jpeg" alt="Two pieces on the wall">
+            <img src="assets/fab.jpeg" alt="Two pieces on the wall" loading="lazy">
           </picture>
         </div>
 
@@ -477,11 +478,13 @@
         </div>
         <article class="artwork artwork--reverse">
           <div class="artwork__media artwork__media--multi">
-            <picture>
-              <source srcset="assets/collage.webp" type="image/webp">
-              <img src="assets/collage.png" alt="Research Notes collage">
-            </picture>
-            <div class="photo-credit">Photo: Esther Lin</div>
+            <div class="artwork__image-wrapper">
+              <picture>
+                <source srcset="assets/collage.webp" type="image/webp">
+                <img src="assets/collage.png" alt="Research Notes collage" loading="lazy">
+              </picture>
+              <div class="photo-credit">Photo: Esther Lin</div>
+            </div>
           </div>
           <div class="artwork__info">
             <h3 class="artwork__title">Research Notes</h3>
@@ -506,11 +509,11 @@
         </article>
 
         <article class="artwork artwork--reverse">
-          <div class="artwork__media artwork__media--multi">
-            <picture>
-              <source srcset="assets/experiments.webp" type="image/webp">
-              <img src="assets/experiments.PNG" alt="Laser Engraving Experiments">
-            </picture>
+            <div class="artwork__media artwork__media--multi">
+              <picture>
+                <source srcset="assets/experiments.webp" type="image/webp">
+                <img src="assets/experiments.PNG" alt="Laser Engraving Experiments" loading="lazy">
+              </picture>
             <video autoplay loop muted playsinline preload="auto">
               <source src="assets/laser-2.mp4" type="video/mp4">
               Your browser does not support the video tag.
@@ -556,7 +559,7 @@
           <div class="about__images">
             <picture>
               <source srcset="assets/reception.webp" type="image/webp">
-              <img src="assets/reception.png" alt="Opening reception">
+              <img src="assets/reception.png" alt="Opening reception" loading="lazy">
             </picture>
           </div>
         </div>
