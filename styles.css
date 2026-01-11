@@ -626,12 +626,12 @@ a:not(.hero-btn):focus-visible {
 
 .artwork__recognition-item span:not(.artwork__recognition-label) {
   flex: 1;
-}
+  }
 
 .artwork__recognition-award {
   font-style: italic;
   color: var(--text-primary);
-}
+  }
 
 .artwork-fullwidth {
   width: 100vw;
