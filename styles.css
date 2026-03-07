@@ -143,14 +143,6 @@ a:focus-visible {
   margin: 0 0 1.25rem;
 }
 
-.hero__location {
-  margin: 0 0 1.25rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  letter-spacing: 0.01em;
-  max-width: 28rem;
-}
-
 .hero__buttons {
   display: flex;
   gap: 0.75rem;
@@ -762,12 +754,6 @@ a:focus-visible {
     text-align: center;
   }
 
-  .hero__location {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-  }
-
   .hero__buttons {
     justify-content: center;
   }
@@ -786,10 +772,9 @@ a:focus-visible {
 
   .hero__animation {
     width: 100%;
-    max-width: 24rem;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    transform: none;
   }
 
   .about__container {
