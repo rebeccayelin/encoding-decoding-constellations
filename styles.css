@@ -608,10 +608,6 @@ a:focus-visible {
   padding-bottom: 0;
 }
 
-/* Acknowledgements: reduce top padding when directly following works (we already removed the gap) */
-.section--dark + .section--light {
-  padding-top: clamp(3rem, 6vw, 5rem);
-}
 
 .artwork-fullwidth img,
 .artwork-fullwidth video {
