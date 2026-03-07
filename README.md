@@ -1,7 +1,27 @@
 # encoding-decoding-constellations
 landing page for my 'constellations' exhibition
 
+## Image optimization
 
+The site uses optimized images from `assets/web/`. Run `convert_to_webp.py` to generate them:
+
+```bash
+python convert_to_webp.py
+```
+
+- **Input:** Original JPG, PNG, JPEG in `assets/` (kept as-is)
+- **Output:** `assets/web/` — WebP for modern browsers, resized JPG/PNG fallbacks for older browsers
+- **Config** (in the script): `QUALITY = 78`, `MAX_DIMENSION = 2000` (capped for 1000px layout @ 2× retina)
+
+Regenerate after changing settings:
+
+```bash
+python convert_to_webp.py --force
+```
+
+Requires: `pip install Pillow`
+
+---
 
 ffmpeg -i outside.mov \
   -vf "scale=1920:-2,fps=30" \
