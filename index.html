@@ -11,6 +11,14 @@
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="#" class="site-nav__brand">Encoding-Decoding Constellations</a>
+      <div class="site-nav__links">
+        <a href="#about">About</a>
+        <a href="#works">Works</a>
+        <a href="#acknowledgements">Acknowledgements</a>
+      </div>
+    </nav>
     <header class="hero">
       <div class="hero__content">
         <p class="hero__eyebrow">Gallery Exhibition</p>
@@ -23,17 +31,11 @@
             Polyglot Geometry
           </a>
         </div>
-        <div class="card card--reception">
-          <p class="card__label">Opening Reception</p>
-          <p class="card__value">Dec 10 · 5:30PM–7PM</p>
-        </div>
-      </div>
-      <div class="hero__side">
-        <div class="hero__gradient" aria-hidden="true"></div>
+        <p class="hero__reception">Opening Reception · Dec 10 · 5:30–7PM</p>
       </div>
       <div class="hero__animation" aria-hidden="true">
-        <video autoplay loop muted playsinline preload="auto">
-          <source src="assets/videos/banner.mp4" type="video/mp4">
+        <video autoplay loop muted playsinline preload="none" class="deferred-video" data-deferred-video data-load-strategy="idle">
+          <source data-src="assets/videos/banner.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -103,6 +105,7 @@
                 <iframe
                   src="https://www.youtube.com/embed/QPcH_5SiJws"
                   title="Video I: Constellation Patterns"
+                  loading="lazy"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
@@ -121,6 +124,7 @@
                 <iframe
                   src="https://www.youtube.com/embed/7imshqFWzTk"
                   title="Video II: Encoding-Decoding Scheme"
+                  loading="lazy"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen>
@@ -141,6 +145,7 @@
               <iframe
                 src="https://www.youtube.com/embed/Me8q_KC0haU"
                 title="Video III: Computational Design Tool"
+                loading="lazy"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
@@ -156,8 +161,8 @@
         </div>
 
         <div class="artwork-fullwidth">
-          <video autoplay loop muted playsinline preload="auto">
-            <source src="assets/videos/projection.mp4" type="video/mp4">
+          <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--landscape" data-deferred-video>
+            <source data-src="assets/videos/projection.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -168,8 +173,8 @@
 
           <article class="artwork artwork--reverse" id="projection-1">
             <div class="artwork__media">
-              <video autoplay loop muted playsinline preload="auto">
-                <source src="assets/videos/projection-1.mp4" type="video/mp4">
+              <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--portrait" data-deferred-video>
+                <source data-src="assets/videos/projection-1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -188,8 +193,8 @@
 
           <article class="artwork" id="projection-2">
             <div class="artwork__media">
-              <video autoplay loop muted playsinline preload="auto">
-                <source src="assets/videos/projection-2.mp4" type="video/mp4">
+              <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--portrait" data-deferred-video>
+                <source data-src="assets/videos/projection-2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -206,8 +211,8 @@
           </article>
 
           <div class="artwork-fullwidth">
-            <video autoplay loop muted playsinline preload="auto">
-              <source src="assets/videos/projection-2-2.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--landscape" data-deferred-video>
+              <source data-src="assets/videos/projection-2-2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -359,8 +364,8 @@
                 <p>Shadowed and fragmented,<br>yet widening—<br>a field of rosettes blooms,<br>a nod to kintsugi.</p>
               </div>
               <div class="artwork__media">
-                <video autoplay loop muted playsinline preload="auto">
-                  <source src="assets/videos/find-myself.mp4" type="video/mp4">
+                <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--portrait" data-deferred-video>
+                  <source data-src="assets/videos/find-myself.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -440,52 +445,40 @@
                   <div class="carousel__slide active">
                     <picture>
                       <source srcset="assets/web/dream-01.webp" type="image/webp">
-                      <img src="assets/web/dream-01.jpeg" alt="How it appeared in my dreams - Image 1">
+                      <img src="assets/web/dream-01.jpeg" alt="How it appeared in my dreams - Image 1" loading="lazy" decoding="async" width="1500" height="1999">
                     </picture>
                   </div>
                   <div class="carousel__slide">
                     <picture>
                       <source srcset="assets/web/dream-02.webp" type="image/webp">
-                      <img src="assets/web/dream-02.jpeg" alt="How it appeared in my dreams - Image 2">
+                      <img src="assets/web/dream-02.jpeg" alt="How it appeared in my dreams - Image 2" loading="lazy" decoding="async" width="1500" height="2000">
                     </picture>
                   </div>
                   <div class="carousel__slide">
                     <picture>
                       <source srcset="assets/web/dream-03.webp" type="image/webp">
-                      <img src="assets/web/dream-03.jpeg" alt="How it appeared in my dreams - Image 3">
+                      <img src="assets/web/dream-03.jpeg" alt="How it appeared in my dreams - Image 3" loading="lazy" decoding="async" width="1500" height="2000">
                     </picture>
                   </div>
                   <div class="carousel__slide">
                     <picture>
                       <source srcset="assets/web/dream-04.webp" type="image/webp">
-                      <img src="assets/web/dream-04.jpeg" alt="How it appeared in my dreams - Image 4">
+                      <img src="assets/web/dream-04.jpeg" alt="How it appeared in my dreams - Image 4" loading="lazy" decoding="async" width="1500" height="2000">
                     </picture>
                   </div>
                 </div>
                 <div class="carousel__thumbnails">
                   <button class="carousel__thumb active" data-index="0" aria-label="View image 1">
-                    <picture>
-                      <source srcset="assets/web/dream-01.webp" type="image/webp">
-                      <img src="assets/web/dream-01.jpeg" alt="How it appeared in my dreams - Thumbnail 1">
-                    </picture>
+                    <img src="assets/web/dream-01-thumb.webp" alt="How it appeared in my dreams - Thumbnail 1" loading="lazy" decoding="async" width="200" height="200">
                   </button>
                   <button class="carousel__thumb" data-index="1" aria-label="View image 2">
-                    <picture>
-                      <source srcset="assets/web/dream-02.webp" type="image/webp">
-                      <img src="assets/web/dream-02.jpeg" alt="How it appeared in my dreams - Thumbnail 2">
-                    </picture>
+                    <img src="assets/web/dream-02-thumb.webp" alt="How it appeared in my dreams - Thumbnail 2" loading="lazy" decoding="async" width="200" height="200">
                   </button>
                   <button class="carousel__thumb" data-index="2" aria-label="View image 3">
-                    <picture>
-                      <source srcset="assets/web/dream-03.webp" type="image/webp">
-                      <img src="assets/web/dream-03.jpeg" alt="How it appeared in my dreams - Thumbnail 3">
-                    </picture>
+                    <img src="assets/web/dream-03-thumb.webp" alt="How it appeared in my dreams - Thumbnail 3" loading="lazy" decoding="async" width="200" height="200">
                   </button>
                   <button class="carousel__thumb" data-index="3" aria-label="View image 4">
-                    <picture>
-                      <source srcset="assets/web/dream-04.webp" type="image/webp">
-                      <img src="assets/web/dream-04.jpeg" alt="How it appeared in my dreams - Thumbnail 4">
-                    </picture>
+                    <img src="assets/web/dream-04-thumb.webp" alt="How it appeared in my dreams - Thumbnail 4" loading="lazy" decoding="async" width="200" height="200">
                   </button>
                 </div>
               </div>
@@ -533,8 +526,8 @@
               <p>A collection of snapshots revealing Lin and Kaplan's development of their encoding–decoding scheme.</p>
             </div>
             <div class="artwork__media">
-              <video autoplay loop muted playsinline preload="auto">
-                <source src="assets/videos/outside.mp4" type="video/mp4">
+              <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--landscape" data-deferred-video>
+                <source data-src="assets/videos/outside.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -547,8 +540,8 @@
               <source srcset="assets/web/engraving-experiments.webp" type="image/webp">
               <img src="assets/web/engraving-experiments.png" alt="Laser Engraving Experiments" loading="lazy">
             </picture>
-            <video autoplay loop muted playsinline preload="auto">
-              <source src="assets/videos/laser-2.mp4" type="video/mp4">
+            <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--landscape" data-deferred-video>
+              <source data-src="assets/videos/laser-2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -566,8 +559,8 @@
         </div>
 
         <div class="artwork-fullwidth" id="laser-1-video">
-          <video autoplay loop muted playsinline preload="auto">
-            <source src="assets/videos/laser-1.mp4" type="video/mp4">
+          <video autoplay loop muted playsinline preload="none" class="deferred-video deferred-video--landscape" data-deferred-video>
+            <source data-src="assets/videos/laser-1.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -613,6 +606,73 @@
       </div>
     </footer>
     <script>
+      // Defer local videos until they are near the viewport so they do not compete with images.
+      (function() {
+        const deferredVideos = Array.from(document.querySelectorAll('[data-deferred-video]'));
+        if (!deferredVideos.length) return;
+
+        function loadVideo(video) {
+          if (video.dataset.loaded === 'true') return;
+
+          video.querySelectorAll('source[data-src]').forEach((source) => {
+            source.src = source.dataset.src;
+            source.removeAttribute('data-src');
+          });
+
+          video.load();
+          video.dataset.loaded = 'true';
+        }
+
+        function playVideo(video) {
+          loadVideo(video);
+          const playback = video.play();
+          if (playback && typeof playback.catch === 'function') {
+            playback.catch(() => {});
+          }
+        }
+
+        const observer = 'IntersectionObserver' in window
+          ? new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                  playVideo(video);
+                } else if (video.dataset.loaded === 'true') {
+                  video.pause();
+                }
+              });
+            }, {
+              rootMargin: '600px 0px',
+              threshold: 0.1
+            })
+          : null;
+
+        const scheduleIdleLoad = window.requestIdleCallback
+          ? (callback) => window.requestIdleCallback(callback, { timeout: 1500 })
+          : (callback) => window.setTimeout(callback, 300);
+
+        deferredVideos.forEach((video) => {
+          if (video.dataset.loadStrategy === 'idle') {
+            const loadAfterPageSettles = () => scheduleIdleLoad(() => playVideo(video));
+
+            if (document.readyState === 'complete') {
+              loadAfterPageSettles();
+            } else {
+              window.addEventListener('load', loadAfterPageSettles, { once: true });
+            }
+
+            return;
+          }
+
+          if (observer) {
+            observer.observe(video);
+            return;
+          }
+
+          playVideo(video);
+        });
+      })();
+
       // Carousel functionality
       (function() {
         const carousel = document.querySelector('[data-carousel="dreams"]');
@@ -676,4 +736,3 @@
     </script>
   </body>
 </html>
-
