@@ -21,6 +21,24 @@ python convert_to_webp.py --force
 
 Requires: `pip install Pillow`
 
+## Video optimization
+
+The site uses optimized MP4s from `assets/videos/web/` and JPEG posters from
+`assets/videos/posters/`. Generate them with:
+
+```bash
+python optimize_videos.py
+```
+
+Use `--force` to rebuild everything:
+
+```bash
+python optimize_videos.py --force
+```
+
+This keeps the source masters in `assets/videos/` and creates smaller web-sized
+copies for GitHub Pages delivery.
+
 ---
 
 ffmpeg -i outside.mov \
