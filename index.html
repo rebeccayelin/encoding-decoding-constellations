@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=video-hover-saturation">
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -20,10 +20,13 @@
             Wiesner Gallery
           </a>
           <a href="https://arts.mit.edu/encoding-decoding-constellations/" class="hero-btn hero-btn--dark">
-            Polyglot Geometry
+            MIT Arts Feature
           </a>
         </div>
-        <p class="hero__reception">Opening Reception · Dec 10 · 5:30–7PM</p>
+        <p class="hero__reception">
+          <span>On view Dec 10, 2025–Jan 25, 2026</span>
+          <span>Opening reception Dec 10, 2025 · 5:30–7PM</span>
+        </p>
       </div>
       <div class="hero__animation" aria-hidden="true">
         <video autoplay loop muted playsinline preload="none" poster="assets/videos/posters/banner.jpg" class="deferred-video" data-deferred-video data-load-strategy="idle">
@@ -76,11 +79,11 @@
           <div class="about__images about__images--stacked">
             <picture>
               <source srcset="assets/web/left-wall-480.webp 480w, assets/web/left-wall-960.webp 960w, assets/web/left-wall.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-              <img src="assets/web/left-wall.jpg" alt="Gallery exhibition view showing left wall with artwork installations" loading="eager" fetchpriority="high" decoding="async">
+              <img src="assets/web/left-wall.jpg" alt="Gallery exhibition view showing left wall with artwork installations" loading="eager" fetchpriority="high" decoding="async" width="2000" height="1332">
             </picture>
             <picture>
               <source srcset="assets/web/back-wall-480.webp 480w, assets/web/back-wall-960.webp 960w, assets/web/back-wall.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-              <img src="assets/web/back-wall.png" alt="Gallery exhibition view showing back wall with artwork installations" loading="eager" fetchpriority="high" decoding="async">
+              <img src="assets/web/back-wall.png" alt="Gallery exhibition view showing back wall with artwork installations" loading="eager" fetchpriority="high" decoding="async" width="2000" height="1332">
             </picture>
           </div>
         </div>
@@ -89,22 +92,53 @@
       <section class="section section--works" id="works">
         <div class="works-inner">
           <h2 class="section__title section__title--works">Works</h2>
+          <nav class="works-nav" aria-label="Works sections" data-works-nav>
+            <button class="works-nav__mobile-toggle" type="button" aria-expanded="false" aria-controls="works-nav-list">
+              <span>Works: <span data-works-nav-current>Background</span></span>
+              <span aria-hidden="true">v</span>
+            </button>
+            <div class="works-nav__list" id="works-nav-list">
+              <a class="works-nav__link is-active" href="#background" data-works-nav-link="background">
+                <span class="works-nav__dot" aria-hidden="true"></span>
+                <span class="works-nav__label">Background</span>
+              </a>
+              <a class="works-nav__link" href="#projections" data-works-nav-link="projections">
+                <span class="works-nav__dot" aria-hidden="true"></span>
+                <span class="works-nav__label">Projections</span>
+              </a>
+              <a class="works-nav__link" href="#engravings" data-works-nav-link="engravings">
+                <span class="works-nav__dot" aria-hidden="true"></span>
+                <span class="works-nav__label">Engravings</span>
+              </a>
+              <a class="works-nav__link" href="#sculptures" data-works-nav-link="sculptures">
+                <span class="works-nav__dot" aria-hidden="true"></span>
+                <span class="works-nav__label">Sculptures</span>
+              </a>
+              <a class="works-nav__link" href="#prints" data-works-nav-link="prints">
+                <span class="works-nav__dot" aria-hidden="true"></span>
+                <span class="works-nav__label">Prints</span>
+              </a>
+              <a class="works-nav__link" href="#process" data-works-nav-link="process">
+                <span class="works-nav__dot" aria-hidden="true"></span>
+                <span class="works-nav__label">Process</span>
+              </a>
+            </div>
+          </nav>
 
         <!-- Background -->
-        <div class="works-category">
-          <h3 class="works-category__title" id="background">Background</h3>
+        <div class="works-category" id="background" data-works-nav-section data-works-nav-label="Background">
+          <h3 class="works-category__title">Background</h3>
 
           <div class="videos-grid">
             <article class="video-item">
               <div class="video-item__embed">
-                <iframe
-                  src="https://www.youtube.com/embed/QPcH_5SiJws"
-                  title="Video I: Constellation Patterns"
-                  loading="lazy"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
+                <button class="youtube-poster" type="button" data-youtube-id="QPcH_5SiJws" data-youtube-title="Video I: Constellation Patterns" aria-label="Play Video I: Constellation Patterns">
+                  <img src="https://i.ytimg.com/vi/QPcH_5SiJws/mqdefault.jpg" alt="" loading="lazy" decoding="async" width="320" height="180">
+                  <span class="youtube-poster__overlay" aria-hidden="true">
+                    <span class="youtube-poster__kicker">Watch Video</span>
+                    <span class="youtube-poster__play"></span>
+                  </span>
+                </button>
               </div>
               <div class="video-item__info">
                 <h4 class="video-item__title">Video I: Constellation Patterns</h4>
@@ -116,14 +150,13 @@
 
             <article class="video-item" id="video-encoding-decoding-scheme">
               <div class="video-item__embed">
-                <iframe
-                  src="https://www.youtube.com/embed/7imshqFWzTk"
-                  title="Video II: Encoding–Decoding Scheme"
-                  loading="lazy"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
+                <button class="youtube-poster" type="button" data-youtube-id="7imshqFWzTk" data-youtube-title="Video II: Encoding–Decoding Scheme" aria-label="Play Video II: Encoding–Decoding Scheme">
+                  <img src="https://i.ytimg.com/vi/7imshqFWzTk/maxresdefault.jpg" alt="" loading="lazy" decoding="async" width="1280" height="720">
+                  <span class="youtube-poster__overlay" aria-hidden="true">
+                    <span class="youtube-poster__kicker">Watch Video</span>
+                    <span class="youtube-poster__play"></span>
+                  </span>
+                </button>
               </div>
               <div class="video-item__info">
                 <h4 class="video-item__title">Video II: Encoding–Decoding Scheme</h4>
@@ -137,14 +170,13 @@
 
           <article class="video-item video-item--fullwidth">
             <div class="video-item__embed">
-              <iframe
-                src="https://www.youtube.com/embed/Me8q_KC0haU"
-                title="Video III: Computational Design Tool"
-                loading="lazy"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
+              <button class="youtube-poster" type="button" data-youtube-id="Me8q_KC0haU" data-youtube-title="Video III: Computational Design Tool" aria-label="Play Video III: Computational Design Tool">
+                <img src="https://i.ytimg.com/vi/Me8q_KC0haU/maxresdefault.jpg" alt="" loading="lazy" decoding="async" width="1280" height="720">
+                <span class="youtube-poster__overlay" aria-hidden="true">
+                  <span class="youtube-poster__kicker">Watch Video</span>
+                  <span class="youtube-poster__play"></span>
+                </span>
+              </button>
             </div>
             <div class="video-item__info">
               <h4 class="video-item__title">Video III: Computational Design Tool</h4>
@@ -163,7 +195,7 @@
         </div>
 
         <!-- Projections -->
-        <div class="works-category">
+        <div class="works-category" id="projections" data-works-nav-section data-works-nav-label="Projections">
           <h3 class="works-category__title">Projections</h3>
 
           <article class="artwork artwork--reverse" id="projection-1">
@@ -213,15 +245,15 @@
           </div>
         </div>
 
-        <!-- Laser Engravings -->
-        <div class="works-category">
-          <h3 class="works-category__title">Laser Engravings</h3>
+        <!-- Engravings -->
+        <div class="works-category" id="engravings" data-works-nav-section data-works-nav-label="Engravings">
+          <h3 class="works-category__title">Engravings</h3>
 
           <article class="artwork" id="after-schotter">
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/web/schotter-480.webp 480w, assets/web/schotter-960.webp 960w, assets/web/schotter.webp 1333w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/schotter.jpg" alt="After Schotter" loading="lazy">
+                <img src="assets/web/schotter.jpg" alt="After Schotter" loading="lazy" width="1333" height="2000">
               </picture>
             </div>
             <div class="artwork__info">
@@ -240,7 +272,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/web/disintegrating-480.webp 480w, assets/web/disintegrating-960.webp 960w, assets/web/disintegrating.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/disintegrating.png" alt="Disintegrating (State of Mind)" loading="lazy">
+                <img src="assets/web/disintegrating.png" alt="Disintegrating (State of Mind)" loading="lazy" width="2000" height="1600">
               </picture>
             </div>
             <div class="artwork__info">
@@ -272,7 +304,7 @@
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/web/yearning-480.webp 480w, assets/web/yearning-960.webp 960w, assets/web/yearning.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/yearning.jpg" alt="Yearning (for a Fantasy)" loading="lazy">
+                <img src="assets/web/yearning.jpg" alt="Yearning (for a Fantasy)" loading="lazy" width="2000" height="1333">
               </picture>
             </div>
             <div class="artwork__info">
@@ -291,7 +323,7 @@
             <div class="artwork__image-wrapper">
               <picture>
                 <source srcset="assets/web/disintegrating-yearning-480.webp 480w, assets/web/disintegrating-yearning-960.webp 960w, assets/web/disintegrating-yearning.webp 2000w" sizes="100vw" type="image/webp">
-                <img src="assets/web/disintegrating-yearning.png" alt="Disintegrating (State of Mind) and Yearning (for a Fantasy) laser engravings displayed on gallery wall" loading="lazy">
+                <img src="assets/web/disintegrating-yearning.png" alt="Disintegrating (State of Mind) and Yearning (for a Fantasy) laser engravings displayed on gallery wall" loading="lazy" width="2000" height="1333">
               </picture>
               <div class="photo-credit">Photo: Esther Lin</div>
             </div>
@@ -299,14 +331,14 @@
         </div>
 
         <!-- Sculptures -->
-        <div class="works-category">
+        <div class="works-category" id="sculptures" data-works-nav-section data-works-nav-label="Sculptures">
           <h3 class="works-category__title">Sculptures</h3>
 
           <article class="artwork artwork--reverse" id="textile-studies">
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/web/skirts-480.webp 480w, assets/web/skirts-960.webp 960w, assets/web/skirts.webp 1333w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/skirts.jpg" alt="Textile Studies" loading="lazy">
+                <img src="assets/web/skirts.jpg" alt="Textile Studies" loading="lazy" width="1333" height="2000">
               </picture>
             </div>
             <div class="artwork__info">
@@ -332,20 +364,20 @@
               <div class="artwork__image-wrapper">
                 <picture>
                   <source srcset="assets/web/find-myself-480.webp 480w, assets/web/find-myself-960.webp 960w, assets/web/find-myself.webp 1426w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                  <img src="assets/web/find-myself.jpg" alt="i couldn't find myself (in your cosmic presence)" loading="lazy">
+                  <img src="assets/web/find-myself.jpg" alt="i couldn't find myself (in your cosmic presence)" loading="lazy" width="1426" height="2000">
                 </picture>
                 <div class="photo-credit">Photo: Esther Lin</div>
               </div>
               <div class="artwork__image-wrapper">
                 <picture>
                   <source srcset="assets/web/find-myself-close-480.webp 480w, assets/web/find-myself-close-960.webp 960w, assets/web/find-myself-close.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                  <img src="assets/web/find-myself-close.jpg" alt="i couldn't find myself (in your cosmic presence) - close-up detail view" loading="lazy">
+                  <img src="assets/web/find-myself-close.jpg" alt="i couldn't find myself (in your cosmic presence) - close-up detail view" loading="lazy" width="2000" height="1333">
                 </picture>
               </div>
               <div class="artwork__image-wrapper">
                 <picture>
                   <source srcset="assets/web/find-myself-engraving-480.webp 480w, assets/web/find-myself-engraving-960.webp 960w, assets/web/find-myself-engraving.webp 1999w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                  <img src="assets/web/find-myself-engraving.jpg" alt="i couldn't find myself (in your cosmic presence) - engraving detail view" loading="lazy">
+                  <img src="assets/web/find-myself-engraving.jpg" alt="i couldn't find myself (in your cosmic presence) - engraving detail view" loading="lazy" width="1999" height="1500">
                 </picture>
               </div>
             </div>
@@ -371,7 +403,7 @@
             <div class="artwork__media artwork__media--multi">
               <picture>
                 <source srcset="assets/web/sculpture-study-2-480.webp 480w, assets/web/sculpture-study-2-960.webp 960w, assets/web/sculpture-study-2.webp 1999w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/sculpture-study-2.jpg" alt="Sculpture Study" loading="lazy">
+                <img src="assets/web/sculpture-study-2.jpg" alt="Sculpture Study" loading="lazy" width="1999" height="1333">
               </picture>
             </div>
             <div class="artwork__info">
@@ -392,21 +424,21 @@
             <div class="artwork__image-wrapper">
               <picture>
                 <source srcset="assets/web/find-myself-opening-480.webp 480w, assets/web/find-myself-opening-960.webp 960w, assets/web/find-myself-opening.webp 1536w" sizes="100vw" type="image/webp">
-                <img src="assets/web/find-myself-opening.png" alt="Opening reception showing i couldn't find myself (in your cosmic presence) installation" loading="lazy">
+                <img src="assets/web/find-myself-opening.png" alt="Opening reception showing i couldn't find myself (in your cosmic presence) installation" loading="lazy" width="1536" height="1024">
               </picture>
               <div class="photo-credit">Photo: Esther Lin</div>
             </div>
           </div>
 
         <!-- Prints -->
-        <div class="works-category">
+        <div class="works-category" id="prints" data-works-nav-section data-works-nav-label="Prints">
           <h3 class="works-category__title">Prints</h3>
 
           <article class="artwork" id="spiraling">
             <div class="artwork__media">
               <picture>
                 <source srcset="assets/web/spiraling-480.webp 480w, assets/web/spiraling-960.webp 960w, assets/web/spiraling.webp 1600w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/spiraling.jpg" alt="Spiraling" loading="lazy">
+                <img src="assets/web/spiraling.jpg" alt="Spiraling" loading="lazy" width="1600" height="2000">
               </picture>
             </div>
             <div class="artwork__info">
@@ -494,11 +526,11 @@
         <div class="artwork-fullwidth" id="cutting-sketch">
           <picture>
             <source srcset="assets/web/cutting-sketch-480.webp 480w, assets/web/cutting-sketch-960.webp 960w, assets/web/cutting-sketch.webp 2000w" sizes="100vw" type="image/webp">
-            <img src="assets/web/cutting-sketch.jpeg" alt="Process documentation showing laser cutting sketch and design work" loading="lazy">
+            <img src="assets/web/cutting-sketch.jpeg" alt="Process documentation showing laser cutting sketch and design work" loading="lazy" width="2000" height="701">
           </picture>
         </div>
 
-        <div class="works-category">
+        <div class="works-category" id="process" data-works-nav-section data-works-nav-label="Process">
           <h3 class="works-category__title">Process</h3>
 
         <article class="artwork artwork--reverse" id="research-notes">
@@ -506,7 +538,7 @@
             <div class="artwork__image-wrapper">
               <picture>
                 <source srcset="assets/web/collage-480.webp 480w, assets/web/collage-960.webp 960w, assets/web/collage.webp 1333w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/collage.png" alt="Research Notes collage" loading="lazy">
+                <img src="assets/web/collage.png" alt="Research Notes collage" loading="lazy" width="1333" height="2000">
               </picture>
               <div class="photo-credit">Photo: Esther Lin</div>
             </div>
@@ -533,7 +565,7 @@
           <div class="artwork__media artwork__media--multi">
             <picture>
               <source srcset="assets/web/engraving-experiments-480.webp 480w, assets/web/engraving-experiments-960.webp 960w, assets/web/engraving-experiments.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-              <img src="assets/web/engraving-experiments.png" alt="Laser Engraving Experiments" loading="lazy">
+              <img src="assets/web/engraving-experiments.png" alt="Laser Engraving Experiments" loading="lazy" width="2000" height="1333">
             </picture>
             <video autoplay loop muted playsinline preload="none" poster="assets/videos/posters/laser-2.jpg" class="deferred-video deferred-video--landscape" data-deferred-video>
               <source data-src="assets/videos/web/laser-2.mp4" type="video/mp4">
@@ -582,7 +614,7 @@
           <div class="about__images">
             <picture>
               <source srcset="assets/web/reception-480.webp 480w, assets/web/reception-960.webp 960w, assets/web/reception.webp 1333w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-              <img src="assets/web/reception.png" alt="Opening reception at the gallery exhibition" loading="lazy">
+              <img src="assets/web/reception.png" alt="Opening reception at the gallery exhibition" loading="lazy" width="1333" height="2000">
             </picture>
           </div>
         </div>
@@ -602,6 +634,16 @@
       </div>
     </footer>
     <script>
+      // Keep full-bleed media aligned to the page width excluding the scrollbar.
+      (function() {
+        function setViewportWidth() {
+          document.documentElement.style.setProperty('--viewport-width', `${document.documentElement.clientWidth}px`);
+        }
+
+        setViewportWidth();
+        window.addEventListener('resize', setViewportWidth);
+      })();
+
       // Defer local videos until they are near the viewport so they do not compete with images.
       (function() {
         const deferredVideos = Array.from(document.querySelectorAll('[data-deferred-video]'));
@@ -670,6 +712,109 @@
           }
 
           playVideo(video);
+        });
+      })();
+
+      // Works navigation
+      (function() {
+        const nav = document.querySelector('[data-works-nav]');
+        const works = document.querySelector('#works');
+        const sections = Array.from(document.querySelectorAll('[data-works-nav-section]'));
+        if (!nav || !works || !sections.length) return;
+
+        const links = Array.from(nav.querySelectorAll('[data-works-nav-link]'));
+        const currentLabel = nav.querySelector('[data-works-nav-current]');
+        const toggle = nav.querySelector('.works-nav__mobile-toggle');
+
+        function setActive(section) {
+          const activeId = section.id;
+          links.forEach((link) => {
+            link.classList.toggle('is-active', link.dataset.worksNavLink === activeId);
+          });
+
+          if (currentLabel) {
+            currentLabel.textContent = section.dataset.worksNavLabel || section.textContent.trim();
+          }
+        }
+
+        function updateNav() {
+          const viewportAnchor = window.innerHeight * 0.72;
+          let activeSection = sections[0];
+
+          sections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= viewportAnchor) {
+              activeSection = section;
+            }
+          });
+
+          setActive(activeSection);
+
+          const worksRect = works.getBoundingClientRect();
+          const isInWorks = worksRect.top <= 0 && worksRect.bottom > window.innerHeight * 0.28;
+          nav.classList.toggle('is-visible', isInWorks);
+        }
+
+        function closeMenu() {
+          nav.classList.remove('is-open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        function scrollToSection(section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        if (toggle) {
+          toggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', String(isOpen));
+          });
+        }
+
+        links.forEach((link) => {
+          link.addEventListener('click', (event) => {
+            const target = document.querySelector(link.getAttribute('href'));
+            if (!target) return;
+
+            event.preventDefault();
+            scrollToSection(target);
+            history.pushState(null, '', link.getAttribute('href'));
+            setActive(target);
+            closeMenu();
+          });
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!nav.contains(event.target)) closeMenu();
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') closeMenu();
+        });
+
+        updateNav();
+        window.addEventListener('scroll', updateNav, { passive: true });
+        window.addEventListener('resize', updateNav);
+      })();
+
+      // Calm YouTube posters
+      (function() {
+        const posters = Array.from(document.querySelectorAll('[data-youtube-id]'));
+        if (!posters.length) return;
+
+        posters.forEach((poster) => {
+          poster.addEventListener('click', () => {
+            const videoId = poster.dataset.youtubeId;
+            if (!videoId) return;
+
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            iframe.title = poster.dataset.youtubeTitle || 'YouTube video';
+            iframe.loading = 'lazy';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            iframe.allowFullscreen = true;
+
+            poster.replaceWith(iframe);
+          });
         });
       })();
 
