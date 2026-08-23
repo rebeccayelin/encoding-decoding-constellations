@@ -714,9 +714,10 @@ a:focus-visible {
 .artwork__recognition-item:last-child { margin-bottom: 0; }
 
 .artwork__recognition-label {
+  display: block;
   font-weight: 500;
   color: var(--ink);
-  margin-right: 0.3rem;
+  margin-bottom: 0.1rem;
 }
 
 .artwork__recognition-award { font-style: italic; }
