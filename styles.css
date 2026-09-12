@@ -705,10 +705,10 @@ a:focus-visible {
 }
 
 .artwork__recognition-item {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.9rem;
   font-size: 0.82rem;
   color: var(--ink-2);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .artwork__recognition-item:last-child { margin-bottom: 0; }
@@ -717,10 +717,42 @@ a:focus-visible {
   display: block;
   font-weight: 500;
   color: var(--ink);
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.3rem;
 }
 
-.artwork__recognition-award { font-style: italic; }
+.artwork__recognition-entry {
+  display: block;
+  position: relative;
+  padding-left: 0.8rem;
+}
+
+.artwork__recognition-entry::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--ink-3);
+}
+
+.artwork__recognition-entry + .artwork__recognition-entry {
+  margin-top: 0.38rem;
+}
+
+.artwork__recognition-title,
+.artwork__recognition-details {
+  display: block;
+}
+
+.artwork__recognition-details {
+  margin-top: 0.02rem;
+  color: var(--ink-3);
+}
+
+.artwork__recognition-award {
+  display: block;
+  margin-top: 0.02rem;
+  font-style: italic;
+  color: var(--ink-3);
+}
 
 /* ============================================
    Full-width media
