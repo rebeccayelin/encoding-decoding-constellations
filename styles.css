@@ -755,6 +755,43 @@ a:focus-visible {
 }
 
 /* ============================================
+   Artwork feature band
+   ============================================ */
+/* A media row for artworks carrying more than one supporting asset.
+   Column widths are derived from each asset's own aspect ratio, so the
+   stacked stills resolve flush against the portrait video with nothing
+   cropped. Ratios assume a 0.562 portrait video beside a 1.500 and a
+   1.333 landscape still; recompute if the assets change. */
+.artwork__band {
+  display: grid;
+  grid-template-columns: 44.1fr 53.9fr;
+  gap: 1rem;
+  align-items: start;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.artwork__band-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.artwork__band picture { display: block; }
+
+.artwork__band img,
+.artwork__band video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  transition: box-shadow var(--t);
+}
+
+.artwork__band img:hover,
+.artwork__band video:hover { box-shadow: var(--shadow-md); }
+
+/* ============================================
    Full-width media
    ============================================ */
 .artwork-fullwidth {
@@ -980,6 +1017,8 @@ a:focus-visible {
     grid-template-columns: 1fr;
     direction: ltr;
   }
+
+  .artwork__band { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
