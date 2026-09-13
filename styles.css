@@ -332,6 +332,10 @@ a:focus-visible {
   gap: 0.78rem;
 }
 
+@media (max-width: 1220px) {
+  .works-nav__list { gap: 0.25rem; }
+}
+
 .works-nav__link {
   display: grid;
   grid-template-columns: 1rem minmax(0, 1fr);
@@ -395,8 +399,10 @@ a:focus-visible {
   }
 
   .works-nav__link {
-    width: 1rem;
-    height: 1rem;
+    /* 1.5rem = 24px, the minimum target size; the dot inside keeps its size. */
+    width: 1.5rem;
+    height: 1.5rem;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -534,13 +540,28 @@ a:focus-visible {
   gap: 1rem;
 }
 
+/* Backed pill: these are YouTube thumbnails with their own baked-in captions,
+   so the kicker needs its own ground to stay legible over any of them. Matches
+   the play button's treatment so the two read as a pair. */
 .youtube-poster__kicker {
   font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   line-height: 1;
   text-transform: uppercase;
-  color: var(--ink-2);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  padding: 0.45rem 0.7rem 0.4rem;
+  transition: background var(--t), border-color var(--t);
+}
+
+.youtube-poster:hover .youtube-poster__kicker,
+.youtube-poster:focus-visible .youtube-poster__kicker {
+  background: #fff;
+  border-color: rgba(13, 13, 12, 0.28);
 }
 
 .youtube-poster__play {
@@ -880,6 +901,46 @@ a:focus-visible {
   display: block;
 }
 
+.carousel__toggle {
+  width: 100%;
+  min-height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-soft);
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: color var(--t), border-color var(--t), background var(--t);
+}
+
+.carousel__toggle:hover {
+  color: var(--ink);
+  border-color: rgba(13, 13, 12, 0.28);
+}
+
+/* Pause glyph: two bars. */
+.carousel__toggle-icon {
+  display: block;
+  width: 0.5rem;
+  height: 0.6rem;
+  border-left: 0.16rem solid currentColor;
+  border-right: 0.16rem solid currentColor;
+}
+
+/* Play glyph: a triangle, matching the video poster's affordance. */
+.carousel__toggle.is-paused .carousel__toggle-icon {
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid currentColor;
+  border-right: 0;
+  border-top: 0.31rem solid transparent;
+  border-bottom: 0.31rem solid transparent;
+  margin-left: 0.12rem;
+}
+
 /* ============================================
    Footer
    ============================================ */
@@ -1032,8 +1093,44 @@ a:focus-visible {
 
   .carousel__thumb { width: 56px; }
 
+  .carousel__toggle {
+    width: 44px;
+    min-height: 44px;
+    flex: 0 0 auto;
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* ============================================
+   Reduced motion
+   ============================================ */
+/* Honour the OS setting: no smooth scrolling, no hover zooms, no crossfades.
+   Autoplay and the carousel's rotation are stopped in JS, which reads the same
+   media query and gives videos native controls instead. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .youtube-poster:hover img,
+  .youtube-poster:focus-visible img,
+  .youtube-poster:hover .youtube-poster__play,
+  .youtube-poster:focus-visible .youtube-poster__play,
+  .works-nav__link:hover .works-nav__dot,
+  .works-nav__link.is-active .works-nav__dot,
+  .works-nav__link:hover:not(.is-active) .works-nav__dot {
+    transform: none;
   }
 }

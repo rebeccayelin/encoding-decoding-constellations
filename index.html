@@ -553,6 +553,9 @@
                   <button class="carousel__thumb" data-index="3" aria-label="View image 4">
                     <img src="assets/web/dream-04-thumb.webp" alt="How it appeared in my dreams - Thumbnail 4" loading="lazy" decoding="async" width="200" height="200">
                   </button>
+                  <button class="carousel__toggle" type="button" data-carousel-toggle aria-label="Pause slideshow">
+                    <span class="carousel__toggle-icon" aria-hidden="true"></span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -693,6 +696,9 @@
         window.addEventListener('resize', setViewportWidth);
       })();
 
+      // Shared across the video and carousel loaders below.
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
       // Defer local videos until they are near the viewport so they do not compete with images.
       (function() {
         const deferredVideos = Array.from(document.querySelectorAll('[data-deferred-video]'));
@@ -711,6 +717,18 @@
         }
 
         function playVideo(video) {
+          // With reduced motion requested, never start playback on our own.
+          // Load the source and expose native controls so the video is still
+          // reachable, just not moving unless the visitor asks for it.
+          if (reducedMotion.matches) {
+            video.removeAttribute('autoplay');
+            video.loop = false;
+            video.controls = true;
+            loadVideo(video);
+            return;
+          }
+
+          video.controls = false;
           loadVideo(video);
           const playback = video.play();
           if (playback && typeof playback.catch === 'function') {
@@ -863,6 +881,9 @@
             iframe.allowFullscreen = true;
 
             poster.replaceWith(iframe);
+            // The activated button is gone from the DOM, which would drop focus
+            // back to the top of the document; move it onto the player instead.
+            iframe.focus({ preventScroll: true });
           });
         });
       })();
@@ -876,6 +897,8 @@
         const thumbs = carousel.querySelectorAll('.carousel__thumb');
         let currentIndex = 0;
         let autoRotateInterval = null;
+        let restartTimeout = null;
+        let userPaused = false;
         const ROTATION_INTERVAL = 4000; // 4 seconds
 
         function showSlide(index) {
@@ -900,6 +923,11 @@
         }
 
         function startAutoRotate() {
+          // Idempotent: mouseleave and the post-click restart can both fire for
+          // the same pause, which used to leave an extra interval running and
+          // make the carousel accelerate.
+          stopAutoRotate();
+          if (userPaused || reducedMotion.matches) return;
           autoRotateInterval = setInterval(nextSlide, ROTATION_INTERVAL);
         }
 
@@ -907,6 +935,10 @@
           if (autoRotateInterval) {
             clearInterval(autoRotateInterval);
             autoRotateInterval = null;
+          }
+          if (restartTimeout) {
+            clearTimeout(restartTimeout);
+            restartTimeout = null;
           }
         }
 
@@ -916,7 +948,7 @@
             showSlide(index);
             stopAutoRotate();
             // Restart auto-rotate after a delay
-            setTimeout(startAutoRotate, ROTATION_INTERVAL);
+            restartTimeout = setTimeout(startAutoRotate, ROTATION_INTERVAL);
           });
         });
 
@@ -924,8 +956,71 @@
         carousel.addEventListener('mouseenter', stopAutoRotate);
         carousel.addEventListener('mouseleave', startAutoRotate);
 
-        // Start auto-rotation
+        // Keyboard users get the same courtesy as the mouse: tabbing into the
+        // thumbnails should not have the slide change underneath them.
+        carousel.addEventListener('focusin', stopAutoRotate);
+        carousel.addEventListener('focusout', (event) => {
+          if (!carousel.contains(event.relatedTarget)) startAutoRotate();
+        });
+
+        // An explicit control, because hover is not available on touch and
+        // auto-rotation needs a way to be stopped (WCAG 2.2.2).
+        const toggle = carousel.querySelector('[data-carousel-toggle]');
+
+        function setPaused(paused) {
+          userPaused = paused;
+          if (toggle) {
+            toggle.classList.toggle('is-paused', paused);
+            toggle.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+          }
+          if (paused) {
+            stopAutoRotate();
+          } else {
+            startAutoRotate();
+          }
+        }
+
+        if (toggle) {
+          toggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            setPaused(!userPaused);
+          });
+        }
+
+        // Inactive slides are display:none, and a display:none image is never
+        // lazy-loaded — so each rotation used to start its fetch only when the
+        // slide appeared, showing an empty box until it arrived. Promote the
+        // slides to eager once the page has settled so every frame is cached
+        // before its turn comes up.
+        const primeSlides = () => {
+          slides.forEach((slide) => {
+            slide.querySelectorAll('img[loading="lazy"]').forEach((img) => {
+              img.loading = 'eager';
+            });
+          });
+        };
+
+        const schedulePrime = window.requestIdleCallback
+          ? () => window.requestIdleCallback(primeSlides, { timeout: 3000 })
+          : () => window.setTimeout(primeSlides, 1200);
+
+        if (document.readyState === 'complete') {
+          schedulePrime();
+        } else {
+          window.addEventListener('load', schedulePrime, { once: true });
+        }
+
+        // Start auto-rotation (startAutoRotate is a no-op under reduced motion)
+        if (reducedMotion.matches) setPaused(true);
         startAutoRotate();
+
+        reducedMotion.addEventListener('change', () => {
+          if (reducedMotion.matches) {
+            setPaused(true);
+          } else {
+            setPaused(false);
+          }
+        });
       })();
     </script>
   </body>
