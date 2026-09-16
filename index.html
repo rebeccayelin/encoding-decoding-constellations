@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=feature-band">
+    <link rel="stylesheet" href="styles.css?v=polymaths-gallery">
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -291,11 +291,83 @@
           </article>
 
           <article class="artwork artwork--reverse" id="disintegrating">
-            <div class="artwork__media">
-              <picture>
-                <source srcset="assets/web/disintegrating-480.webp 480w, assets/web/disintegrating-960.webp 960w, assets/web/disintegrating.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/disintegrating.png" alt="Disintegrating (State of Mind)" loading="lazy" width="2000" height="1600">
-              </picture>
+            <div class="artwork__media artwork__media--versions">
+              <section class="version-carousel" data-process-carousel aria-label="Five views of Disintegrating (State of Mind)">
+                <div class="version-carousel__viewport" data-process-viewport tabindex="0" aria-roledescription="carousel" aria-label="Views of Disintegrating (State of Mind)">
+                  <div class="version-carousel__track" data-process-track>
+                    <figure class="version-carousel__slide" data-process-slide aria-label="1 of 5: Fill and outline">
+                      <div class="version-carousel__image">
+                        <picture>
+                          <source srcset="assets/web/disintegrating-versions/2025-05-05-universal-outline-fill.webp?v=portrait" type="image/webp">
+                          <img src="assets/web/disintegrating-versions/2025-05-05-universal-outline-fill.jpg?v=portrait" alt="Scan of Disintegrating engraved with fill and outline" loading="lazy" decoding="async" width="1414" height="1800">
+                        </picture>
+                      </div>
+                      <figcaption class="version-carousel__caption">
+                        <p>Now at UCSD.</p>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="version-carousel__slide" data-process-slide aria-label="2 of 5: Laser engraving in progress" aria-hidden="true" inert>
+                      <div class="version-carousel__image version-carousel__image--process">
+                        <picture>
+                          <source srcset="assets/web/disintegrating-laser-process-01-480.webp 480w, assets/web/disintegrating-laser-process-01-960.webp 960w, assets/web/disintegrating-laser-process-01.webp 1335w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
+                          <img src="assets/web/disintegrating-laser-process-01.jpg" alt="Disintegrating being engraved inside a laser cutter" loading="lazy" decoding="async" width="1335" height="2000">
+                        </picture>
+                      </div>
+                      <figcaption class="version-carousel__caption">
+                        <p>Translating the computational pattern into a physical engraving.</p>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="version-carousel__slide" data-process-slide aria-label="3 of 5: Office installation view" aria-hidden="true" inert>
+                      <div class="version-carousel__image version-carousel__image--installation">
+                        <picture>
+                          <source srcset="assets/web/disintegrating-installation-oblique-480.webp 480w, assets/web/disintegrating-installation-oblique.webp 927w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
+                          <img src="assets/web/disintegrating-installation-oblique.png" alt="Oblique view of Disintegrating installed in the MIT Office of the Vice Chancellor" loading="lazy" decoding="async" width="927" height="1391">
+                        </picture>
+                      </div>
+                      <figcaption class="version-carousel__caption">
+                        <p>Now at MIT’s Office of the Vice Chancellor.</p>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="version-carousel__slide" data-process-slide aria-label="4 of 5: Outline only" aria-hidden="true" inert>
+                      <div class="version-carousel__image">
+                        <picture>
+                          <source srcset="assets/web/disintegrating-versions/2025-04-25-universal-outline.webp?v=portrait" type="image/webp">
+                          <img src="assets/web/disintegrating-versions/2025-04-25-universal-outline.jpg?v=portrait" alt="Scan of Disintegrating engraved as an outline only" loading="lazy" decoding="async" width="1414" height="1800">
+                        </picture>
+                      </div>
+                      <figcaption class="version-carousel__caption">
+                        <p>Two copies; neither is currently owned.</p>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="version-carousel__slide" data-process-slide aria-label="5 of 5: Fill with offset outline" aria-hidden="true" inert>
+                      <div class="version-carousel__image">
+                        <picture>
+                          <source srcset="assets/web/disintegrating-versions/2025-04-25-universal-offset.webp?v=portrait" type="image/webp">
+                          <img src="assets/web/disintegrating-versions/2025-04-25-universal-offset.jpg?v=portrait" alt="Scan of Disintegrating engraved with a filled pattern and offset outline" loading="lazy" decoding="async" width="1414" height="1800">
+                        </picture>
+                      </div>
+                      <figcaption class="version-carousel__caption">
+                        <p>Private collection, Manaswi Mishra.</p>
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+
+                <div class="version-carousel__controls">
+                  <div class="version-carousel__tabs" role="tablist" aria-label="Choose a view">
+                    <button type="button" role="tab" aria-selected="true" aria-label="May 5, at UCSD" data-process-go="0"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-label="Laser engraving in progress" data-process-go="1"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-label="Office installation" data-process-go="2"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-label="Outline only" data-process-go="3"></button>
+                    <button type="button" role="tab" aria-selected="false" aria-label="Offset outline, Manaswi Mishra" data-process-go="4"></button>
+                  </div>
+                  <p class="sr-only" aria-live="polite" data-process-status>Showing view 1 of 5</p>
+                </div>
+              </section>
             </div>
             <div class="artwork__info">
               <h4 class="artwork__title">Disintegrating (State of Mind)</h4>
@@ -317,7 +389,7 @@
                     </span>
                     <span class="artwork__recognition-entry">
                       <span class="artwork__recognition-title"><em>Group Exhibition of Mathematical Art</em></span>
-                      <span class="artwork__recognition-details">UC Santa Cruz Department of Mathematics · Santa Cruz, CA · 2026</span>
+                      <span class="artwork__recognition-details">UCSD Department of Mathematics · 2026</span>
                     </span>
                     <span class="artwork__recognition-entry">
                       <span class="artwork__recognition-title"><em>Office of the Vice Chancellor</em></span>
@@ -327,7 +399,10 @@
                 </p>
                 <p class="artwork__recognition-item">
                   <span class="artwork__recognition-label">Collection:</span>
-                  <span class="artwork__recognition-entry">Private collection, <a href="https://en.wikipedia.org/wiki/Rapha%C3%ABl_Rouquier" target="_blank" rel="noopener">Raphaël Rouquier</a></span>
+                  <span>
+                    <span class="artwork__recognition-entry">Private collection, <a href="https://en.wikipedia.org/wiki/Rapha%C3%ABl_Rouquier" target="_blank" rel="noopener">Raphaël Rouquier</a></span>
+                    <span class="artwork__recognition-entry">Private collection, <a href="https://manaswimishra.com/" target="_blank" rel="noopener">Manaswi Mishra</a></span>
+                  </span>
                 </p>
                 <p class="artwork__recognition-item">
                   <span class="artwork__recognition-label">Press:</span>
@@ -339,6 +414,130 @@
               </div>
             </div>
           </article>
+
+          <section class="process-carousel" id="disintegrating-versions" data-process-carousel aria-labelledby="disintegrating-versions-title" hidden aria-hidden="true">
+            <div class="process-carousel__header">
+              <div>
+                <p class="process-carousel__eyebrow">Material process</p>
+                <h4 class="process-carousel__title" id="disintegrating-versions-title">Versions of <em>Disintegrating</em></h4>
+              </div>
+              <p class="process-carousel__intro">The same computational pattern changes across four physical versions, each carrying its own process and history.</p>
+            </div>
+
+            <div class="process-carousel__viewport" data-process-viewport tabindex="0" aria-roledescription="carousel" aria-label="Versions of Disintegrating (State of Mind)">
+              <div class="process-carousel__track" data-process-track>
+                <article class="process-carousel__slide" data-process-slide aria-label="1 of 4: Fill and outline">
+                  <div class="process-carousel__media">
+                    <picture>
+                      <source srcset="assets/web/disintegrating-versions/2025-05-05-universal-outline-fill.webp?v=portrait" type="image/webp">
+                      <img src="assets/web/disintegrating-versions/2025-05-05-universal-outline-fill.jpg?v=portrait" alt="Scan of Disintegrating engraved with fill and outline" loading="lazy" decoding="async" width="1414" height="1800">
+                    </picture>
+                  </div>
+                  <div class="process-carousel__caption">
+                    <p class="process-carousel__count">01 / 04</p>
+                    <p class="process-carousel__date">May 5, 2025</p>
+                    <h5>Fill and outline</h5>
+                    <p>The filled field gives the constellation more visual weight while the outline holds its structure. This version is now at UCSD.</p>
+                    <details>
+                      <summary>Details</summary>
+                      <dl>
+                        <div><dt>Machine</dt><dd>Universal laser</dd></div>
+                        <div><dt>Location</dt><dd>UCSD</dd></div>
+                        <div><dt>Inventory</dt><dd>D-2025-05-05</dd></div>
+                      </dl>
+                    </details>
+                  </div>
+                </article>
+
+                <article class="process-carousel__slide" data-process-slide aria-label="2 of 4: Office installation views" aria-hidden="true" inert>
+                  <div class="process-carousel__media process-carousel__media--pair">
+                    <picture>
+                      <source srcset="assets/web/disintegrating-installation-oblique-480.webp 480w, assets/web/disintegrating-installation-oblique.webp 927w" sizes="(max-width: 900px) 50vw, 25vw" type="image/webp">
+                      <img src="assets/web/disintegrating-installation-oblique.png" alt="Oblique view of Disintegrating installed in the MIT Office of the Vice Chancellor" loading="lazy" decoding="async" width="927" height="1391">
+                    </picture>
+                    <picture>
+                      <source srcset="assets/web/disintegrating-installation-front-480.webp 480w, assets/web/disintegrating-installation-front.webp 927w" sizes="(max-width: 900px) 50vw, 25vw" type="image/webp">
+                      <img src="assets/web/disintegrating-installation-front.png" alt="Front view of Disintegrating installed in the MIT Office of the Vice Chancellor" loading="lazy" decoding="async" width="927" height="1391">
+                    </picture>
+                  </div>
+                  <div class="process-carousel__caption">
+                    <p class="process-carousel__count">02 / 04</p>
+                    <p class="process-carousel__date">October 19, 2025</p>
+                    <h5>Office installation</h5>
+                    <p>Oblique and front views of another version, now installed in MIT’s Office of the Vice Chancellor.</p>
+                    <details>
+                      <summary>Details</summary>
+                      <dl>
+                        <div><dt>Machine</dt><dd>Universal laser</dd></div>
+                        <div><dt>Location</dt><dd>MIT Office of the Vice Chancellor</dd></div>
+                        <div><dt>Inventory</dt><dd>D-2025-10-19-A</dd></div>
+                      </dl>
+                    </details>
+                  </div>
+                </article>
+
+                <article class="process-carousel__slide" data-process-slide aria-label="3 of 4: Outline only" aria-hidden="true" inert>
+                  <div class="process-carousel__media">
+                    <picture>
+                      <source srcset="assets/web/disintegrating-versions/2025-04-25-universal-outline.webp?v=portrait" type="image/webp">
+                      <img src="assets/web/disintegrating-versions/2025-04-25-universal-outline.jpg?v=portrait" alt="Scan of Disintegrating engraved as an outline only" loading="lazy" decoding="async" width="1414" height="1800">
+                    </picture>
+                  </div>
+                  <div class="process-carousel__caption">
+                    <p class="process-carousel__count">03 / 04</p>
+                    <p class="process-carousel__date">April 25, 2025</p>
+                    <h5>Outline only</h5>
+                    <p>Without a filled field, the pattern is carried by its contours and more of the paper remains open.</p>
+                    <details>
+                      <summary>Details</summary>
+                      <dl>
+                        <div><dt>Machine</dt><dd>Universal laser</dd></div>
+                        <div><dt>Copies</dt><dd>Two; neither currently owned</dd></div>
+                        <div><dt>Inventory</dt><dd>D-2025-04-25-B</dd></div>
+                      </dl>
+                    </details>
+                  </div>
+                </article>
+
+                <article class="process-carousel__slide" data-process-slide aria-label="4 of 4: Fill with offset outline" aria-hidden="true" inert>
+                  <div class="process-carousel__media">
+                    <picture>
+                      <source srcset="assets/web/disintegrating-versions/2025-04-25-universal-offset.webp?v=portrait" type="image/webp">
+                      <img src="assets/web/disintegrating-versions/2025-04-25-universal-offset.jpg?v=portrait" alt="Scan of Disintegrating engraved with a filled pattern and offset outline" loading="lazy" decoding="async" width="1414" height="1800">
+                    </picture>
+                  </div>
+                  <div class="process-carousel__caption">
+                    <p class="process-carousel__count">04 / 04</p>
+                    <p class="process-carousel__date">April 25, 2025</p>
+                    <h5>Fill with offset outline</h5>
+                    <p>The offset outline adds a second boundary around the filled pattern, giving the engraving a denser edge. This version is now owned by Manaswi Mishra.</p>
+                    <details>
+                      <summary>Details</summary>
+                      <dl>
+                        <div><dt>Machine</dt><dd>Universal laser</dd></div>
+                        <div><dt>Collection</dt><dd>Manaswi Mishra</dd></div>
+                        <div><dt>Inventory</dt><dd>D-2025-04-25-A</dd></div>
+                      </dl>
+                    </details>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="process-carousel__controls">
+              <div class="process-carousel__buttons">
+                <button type="button" data-process-prev aria-label="Show previous version">Previous</button>
+                <button type="button" data-process-next aria-label="Show next version">Next</button>
+              </div>
+              <div class="process-carousel__rail" role="tablist" aria-label="Choose a version">
+                <button type="button" role="tab" aria-selected="true" data-process-go="0"><span>May 05</span><small>At UCSD</small></button>
+                <button type="button" role="tab" aria-selected="false" data-process-go="1"><span>Installed</span><small>Chancellor’s office</small></button>
+                <button type="button" role="tab" aria-selected="false" data-process-go="2"><span>Apr 25</span><small>Outline</small></button>
+                <button type="button" role="tab" aria-selected="false" data-process-go="3"><span>Apr 25</span><small>Manaswi</small></button>
+              </div>
+              <p class="sr-only" aria-live="polite" data-process-status>Showing version 1 of 4</p>
+            </div>
+          </section>
 
           <article class="artwork" id="yearning">
             <div class="artwork__media">
@@ -384,21 +583,7 @@
           <h3 class="works-category__title">Sculptures</h3>
 
           <article class="artwork artwork--reverse" id="textile-studies">
-            <div class="artwork__media">
-              <picture>
-                <source srcset="assets/web/skirts-480.webp 480w, assets/web/skirts-960.webp 960w, assets/web/skirts.webp 1333w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
-                <img src="assets/web/skirts.jpg" alt="Textile Studies" loading="lazy" width="1333" height="2000">
-              </picture>
-            </div>
-            <div class="artwork__info">
-              <h4 class="artwork__title">Textile Studies</h4>
-              <div class="artwork__meta">
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
-                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Polyester cotton blend</p>
-              </div>
-              <div class="artwork__wall-text">
-                <p>These pieces translate digital patterns into physical form. Through handcraft, mathematics and computation become embodied, intimate, and lived-in, draped on the body.</p>
-              </div>
+            <div class="artwork__media artwork__media--polymaths">
               <div class="artwork__recognition">
                 <p class="artwork__recognition-item">
                   <span class="artwork__recognition-label">Also:</span>
@@ -417,6 +602,44 @@
                     </span>
                   </span>
                 </p>
+              </div>
+              <div class="polymaths-gallery" role="group" aria-label="Installation views of Textile Studies at Polymaths">
+                <picture class="polymaths-gallery__lead">
+                  <source srcset="assets/web/textile-studies-detail-05-480.webp 480w, assets/web/textile-studies-detail-05-960.webp 960w, assets/web/textile-studies-detail-05.webp 2000w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
+                  <img src="assets/web/textile-studies-detail-05.jpg" alt="Close installation view of a black cutwork textile sculpture on a miniature dress form at Polymaths" loading="lazy" decoding="async" width="2000" height="1334">
+                </picture>
+                <picture class="polymaths-gallery__portrait">
+                  <source srcset="assets/web/textile-studies-detail-01-480.webp 480w, assets/web/textile-studies-detail-01-960.webp 960w, assets/web/textile-studies-detail-01.webp 1333w" sizes="(max-width: 640px) 50vw, 12vw" type="image/webp">
+                  <img src="assets/web/textile-studies-detail-01.jpg" alt="Two black cutwork textile sculptures displayed on miniature dress forms at Polymaths" loading="lazy" decoding="async" width="1333" height="2000">
+                </picture>
+                <picture class="polymaths-gallery__portrait">
+                  <source srcset="assets/web/textile-studies-detail-02-480.webp 480w, assets/web/textile-studies-detail-02-960.webp 960w, assets/web/textile-studies-detail-02.webp 1332w" sizes="(max-width: 640px) 50vw, 12vw" type="image/webp">
+                  <img src="assets/web/textile-studies-detail-02.jpg" alt="Frontal detail of a black cutwork textile sculpture at Polymaths" loading="lazy" decoding="async" width="1332" height="2000">
+                </picture>
+                <picture class="polymaths-gallery__portrait">
+                  <source srcset="assets/web/textile-studies-detail-04-480.webp 480w, assets/web/textile-studies-detail-04-960.webp 960w, assets/web/textile-studies-detail-04.webp 1333w" sizes="(max-width: 640px) 50vw, 12vw" type="image/webp">
+                  <img src="assets/web/textile-studies-detail-04.jpg" alt="Angled detail of a black cutwork textile sculpture and its rosette pattern at Polymaths" loading="lazy" decoding="async" width="1333" height="2000">
+                </picture>
+                <picture class="polymaths-gallery__portrait">
+                  <source srcset="assets/web/textile-studies-detail-03-480.webp 480w, assets/web/textile-studies-detail-03-960.webp 960w, assets/web/textile-studies-detail-03.webp 1333w" sizes="(max-width: 640px) 50vw, 12vw" type="image/webp">
+                  <img src="assets/web/textile-studies-detail-03.jpg" alt="Backlit detail of a black cutwork textile sculpture at Polymaths" loading="lazy" decoding="async" width="1333" height="2000">
+                </picture>
+              </div>
+            </div>
+            <div class="artwork__info">
+              <h4 class="artwork__title">Textile Studies</h4>
+              <div class="artwork__meta">
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Year:</span> 2025</p>
+                <p class="artwork__meta-item"><span class="artwork__meta-label">Medium:</span> Polyester cotton blend</p>
+              </div>
+              <div class="artwork__wall-text">
+                <p>These pieces translate digital patterns into physical form. Through handcraft, mathematics and computation become embodied, intimate, and lived-in, draped on the body.</p>
+              </div>
+              <div class="artwork__inline-media">
+                <picture>
+                  <source srcset="assets/web/skirts-480.webp 480w, assets/web/skirts-960.webp 960w, assets/web/skirts.webp 1333w" sizes="(max-width: 900px) calc(100vw - 3rem), 48vw" type="image/webp">
+                  <img src="assets/web/skirts.jpg" alt="Textile Studies" loading="lazy" decoding="async" width="1333" height="2000">
+                </picture>
               </div>
             </div>
           </article>
@@ -883,6 +1106,86 @@
         updateNav();
         window.addEventListener('scroll', updateNav, { passive: true });
         window.addEventListener('resize', updateNav);
+      })();
+
+      // Artwork process carousel
+      (function() {
+        const carousel = document.querySelector('[data-process-carousel]');
+        if (!carousel) return;
+
+        const viewport = carousel.querySelector('[data-process-viewport]');
+        const track = carousel.querySelector('[data-process-track]');
+        const slides = Array.from(carousel.querySelectorAll('[data-process-slide]'));
+        const tabs = Array.from(carousel.querySelectorAll('[data-process-go]'));
+        const previous = carousel.querySelector('[data-process-prev]');
+        const next = carousel.querySelector('[data-process-next]');
+        const status = carousel.querySelector('[data-process-status]');
+        let current = 0;
+        let touchStartX = null;
+
+        function show(index, focusTab = false) {
+          current = (index + slides.length) % slides.length;
+          track.style.transform = `translateX(-${current * 100}%)`;
+
+          slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === current;
+            slide.toggleAttribute('inert', !isActive);
+            slide.setAttribute('aria-hidden', String(!isActive));
+          });
+
+          tabs.forEach((tab, tabIndex) => {
+            const isActive = tabIndex === current;
+            tab.setAttribute('aria-selected', String(isActive));
+            tab.tabIndex = isActive ? 0 : -1;
+          });
+
+          if (status) status.textContent = `Showing view ${current + 1} of ${slides.length}`;
+          if (focusTab && tabs[current]) tabs[current].focus({ preventScroll: true });
+        }
+
+        if (previous) previous.addEventListener('click', () => show(current - 1));
+        if (next) next.addEventListener('click', () => show(current + 1));
+
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => show(index));
+          tab.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+              event.preventDefault();
+              show(current - 1, true);
+            }
+            if (event.key === 'ArrowRight') {
+              event.preventDefault();
+              show(current + 1, true);
+            }
+          });
+        });
+
+        viewport.addEventListener('keydown', (event) => {
+          if (event.target !== viewport) return;
+          if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            show(current - 1);
+          }
+          if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            show(current + 1);
+          }
+        });
+
+        viewport.addEventListener('pointerdown', (event) => {
+          if (event.pointerType === 'mouse') return;
+          touchStartX = event.clientX;
+        });
+
+        viewport.addEventListener('pointerup', (event) => {
+          if (touchStartX === null || event.pointerType === 'mouse') return;
+          const distance = event.clientX - touchStartX;
+          touchStartX = null;
+          if (Math.abs(distance) < 45) return;
+          show(current + (distance < 0 ? 1 : -1));
+        });
+
+        show(0);
       })();
 
       // Calm YouTube posters

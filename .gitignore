@@ -6,3 +6,6 @@ assets/frames-find-myself/
 
 # Claude Code
 .claude/
+
+# Large local source artwork files
+source-assets/disintegrating/scans/*.psd

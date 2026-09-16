@@ -288,7 +288,7 @@ a:focus-visible {
 .about__images img {
   width: 100%;
   height: auto;
-  border-radius: var(--radius);
+  border-radius: 0;
 }
 
 .about__images--stacked {
@@ -472,7 +472,7 @@ a:focus-visible {
   height: 0;
   overflow: hidden;
   background: var(--bg-soft);
-  border-radius: var(--radius);
+  border-radius: 0;
   transition: box-shadow var(--t);
 }
 
@@ -641,12 +641,32 @@ a:focus-visible {
   height: auto;
   display: block;
   background: var(--bg-soft);
-  border-radius: var(--radius);
+  border-radius: 0;
   transition: box-shadow var(--t);
 }
 
 .artwork__media img:hover,
 .artwork__media video:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.artwork__inline-media {
+  margin-top: 0.15rem;
+}
+
+.artwork__inline-media picture,
+.artwork__inline-media img {
+  display: block;
+  width: 100%;
+}
+
+.artwork__inline-media img {
+  height: auto;
+  background: var(--bg-soft);
+  transition: box-shadow var(--t);
+}
+
+.artwork__inline-media img:hover {
   box-shadow: var(--shadow-md);
 }
 
@@ -675,7 +695,7 @@ a:focus-visible {
   gap: 1rem;
 }
 
-.artwork__media--multi > video { border-radius: var(--radius); }
+.artwork__media--multi > video { border-radius: 0; }
 
 .artwork__info {
   display: flex;
@@ -743,15 +763,6 @@ a:focus-visible {
 
 .artwork__recognition-entry {
   display: block;
-  position: relative;
-  padding-left: 0.8rem;
-}
-
-.artwork__recognition-entry::before {
-  content: "·";
-  position: absolute;
-  left: 0;
-  color: var(--ink-3);
 }
 
 .artwork__recognition-entry + .artwork__recognition-entry {
@@ -773,6 +784,521 @@ a:focus-visible {
   margin-top: 0.02rem;
   font-style: italic;
   color: var(--ink-3);
+}
+
+/* Disintegrating version carousel inside the standard artwork record */
+.artwork__media--versions {
+  min-width: 0;
+}
+
+.version-carousel {
+  min-width: 0;
+}
+
+.version-carousel__viewport {
+  overflow: hidden;
+  outline: none;
+}
+
+.version-carousel__viewport:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.version-carousel__track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 520ms var(--ease);
+  will-change: transform;
+}
+
+.version-carousel__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.version-carousel__image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 11 / 14;
+  overflow: hidden;
+  background: #fff;
+}
+
+.version-carousel__image picture {
+  width: 100%;
+  height: 100%;
+}
+
+.artwork__media .version-carousel__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: #fff;
+  object-fit: contain;
+  transition: none;
+}
+
+.artwork__media .version-carousel__image img:hover {
+  box-shadow: none;
+}
+
+.version-carousel__image--installation {
+  position: relative;
+}
+
+.version-carousel__image--installation picture,
+.artwork__media .version-carousel__image--installation img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.artwork__media .version-carousel__image--installation img {
+  object-fit: cover;
+  object-position: 50% 58%;
+}
+
+.version-carousel__image--process {
+  background: #0d0d0c;
+}
+
+.artwork__media .version-carousel__image--process img {
+  object-fit: cover;
+  object-position: 50% 56%;
+}
+
+.version-carousel__image--pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.version-carousel__image--pair picture {
+  min-width: 0;
+}
+
+.artwork__media .version-carousel__image--pair img {
+  object-fit: cover;
+}
+
+.version-carousel__caption {
+  min-height: 2rem;
+  padding: 0.38rem 0 0.2rem;
+}
+
+.version-carousel__caption p {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.version-carousel__controls {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.15rem;
+}
+
+.version-carousel__controls > button,
+.version-carousel__tabs button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-2);
+  font: inherit;
+  cursor: pointer;
+}
+
+.version-carousel__controls > button {
+  padding: 0.35rem 0;
+  font-size: 0.68rem;
+}
+
+.version-carousel__controls > button:hover,
+.version-carousel__controls > button:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
+.version-carousel__tabs {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.version-carousel__tabs button {
+  width: 0.48rem;
+  height: 0.48rem;
+  padding: 0;
+  border: 1px solid var(--ink-3);
+  border-radius: 50%;
+}
+
+.version-carousel__tabs button[aria-selected="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.version-carousel__tabs button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.polymaths-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.38rem;
+  width: 100%;
+  margin-top: 0;
+}
+
+.artwork__media--polymaths .artwork__recognition {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.artwork__media--polymaths .polymaths-gallery {
+  margin-top: 1rem;
+}
+
+.polymaths-gallery picture {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.polymaths-gallery img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: box-shadow var(--t);
+}
+
+.polymaths-gallery img:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.polymaths-gallery__lead {
+  grid-column: 1 / -1;
+  aspect-ratio: 3 / 2;
+}
+
+.polymaths-gallery__portrait {
+  aspect-ratio: 2 / 3;
+}
+
+/* ============================================
+   Artwork process carousel
+   ============================================ */
+.process-carousel {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  border-top: 1px solid var(--border-strong);
+}
+
+.process-carousel__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.72fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.process-carousel__eyebrow {
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.process-carousel__title {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.process-carousel__intro {
+  max-width: 31rem;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.process-carousel__viewport {
+  overflow: hidden;
+  border-radius: 0;
+  outline: none;
+}
+
+.process-carousel__viewport:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+.process-carousel__track {
+  display: flex;
+  align-items: stretch;
+  transition: transform 520ms var(--ease);
+  will-change: transform;
+}
+
+.process-carousel__slide {
+  display: grid;
+  flex: 0 0 100%;
+  grid-template-columns: minmax(0, 1.52fr) minmax(17rem, 0.68fr);
+  min-width: 0;
+  background: #fff;
+}
+
+.process-carousel__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: 0;
+  background: #fff;
+}
+
+.process-carousel__media picture {
+  width: 100%;
+}
+
+.process-carousel__media img {
+  width: 100%;
+  aspect-ratio: 11 / 14;
+  object-fit: contain;
+  background: #fff;
+}
+
+.process-carousel__media--photo img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.process-carousel__media--pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  align-content: center;
+}
+
+.process-carousel__media--pair img {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.process-carousel__credit {
+  position: absolute;
+  bottom: clamp(1rem, 2.5vw, 2rem);
+  left: clamp(1rem, 2.5vw, 2rem);
+  padding: 0.28rem 0.48rem;
+  border-radius: 2px;
+  background: rgba(13, 13, 12, 0.68);
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+}
+
+.process-carousel__caption {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+.process-carousel__count,
+.process-carousel__date {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 0.69rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.process-carousel__count {
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.process-carousel__caption h5 {
+  margin: 0.35rem 0 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.25rem, 2vw, 1.72rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.process-carousel__caption > p:not(.process-carousel__count):not(.process-carousel__date):not(.process-carousel__link) {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9rem;
+  line-height: 1.72;
+}
+
+.process-carousel details {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-strong);
+}
+
+.process-carousel summary {
+  width: max-content;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.process-carousel dl {
+  margin: 1rem 0 0;
+}
+
+.process-carousel dl div {
+  display: grid;
+  grid-template-columns: 5.6rem 1fr;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.process-carousel dt {
+  color: var(--ink-3);
+}
+
+.process-carousel dd {
+  margin: 0;
+  color: var(--ink-2);
+}
+
+.process-carousel__link {
+  margin: 1.5rem 0 0;
+  font-size: 0.78rem;
+}
+
+.process-carousel__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.process-carousel__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.process-carousel__buttons button,
+.process-carousel__rail button {
+  appearance: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.process-carousel__buttons button {
+  min-width: 5.4rem;
+  padding: 0.66rem 0.9rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-2);
+  font-size: 0.72rem;
+  font-weight: 500;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.process-carousel__buttons button:hover,
+.process-carousel__buttons button:focus-visible {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+  outline: none;
+}
+
+.process-carousel__rail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.process-carousel__rail button {
+  position: relative;
+  min-width: 0;
+  padding: 0.7rem 0.45rem 0;
+  border-top: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--ink-3);
+  text-align: left;
+}
+
+.process-carousel__rail button::before {
+  position: absolute;
+  top: -1px;
+  right: 100%;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  content: "";
+  transition: right 220ms ease;
+}
+
+.process-carousel__rail button[aria-selected="true"] {
+  color: var(--ink);
+}
+
+.process-carousel__rail button[aria-selected="true"]::before {
+  right: 0;
+}
+
+.process-carousel__rail button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.process-carousel__rail span,
+.process-carousel__rail small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.process-carousel__rail span {
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.process-carousel__rail small {
+  margin-top: 0.13rem;
+  font-size: 0.63rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ============================================
@@ -804,7 +1330,7 @@ a:focus-visible {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius);
+  border-radius: 0;
   background: var(--bg-soft);
   transition: box-shadow var(--t);
 }
@@ -858,7 +1384,7 @@ a:focus-visible {
 .carousel__main {
   flex: 1;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: 0;
   background: var(--bg-soft);
 }
 
@@ -886,7 +1412,7 @@ a:focus-visible {
   background: none;
   cursor: pointer;
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: 0;
   transition: border-color var(--t), opacity var(--t);
   opacity: 0.55;
 }
@@ -1080,6 +1606,31 @@ a:focus-visible {
   }
 
   .artwork__band { grid-template-columns: 1fr; }
+
+  .process-carousel__header,
+  .process-carousel__slide {
+    grid-template-columns: 1fr;
+  }
+
+  .process-carousel__header {
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .process-carousel__caption {
+    justify-content: flex-start;
+  }
+
+  .process-carousel__controls {
+    grid-template-columns: 1fr;
+  }
+
+  .process-carousel__rail {
+    grid-template-columns: repeat(4, minmax(7rem, 1fr));
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+    scrollbar-width: thin;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1099,9 +1650,21 @@ a:focus-visible {
     flex: 0 0 auto;
   }
 
+  .polymaths-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .process-carousel__caption {
+    padding: 1.35rem;
+  }
+
+  .process-carousel__buttons button {
+    flex: 1;
   }
 }
 
